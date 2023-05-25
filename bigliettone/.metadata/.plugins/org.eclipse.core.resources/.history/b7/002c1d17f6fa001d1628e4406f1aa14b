@@ -1,0 +1,7 @@
+package com.biglietOne.models;
+
+public class Artista extends Entity{
+
+	private String nomeArtista;
+	private String infoArtista;
+}

@@ -1,0 +1,17 @@
+package com.biglietOne.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.biglietOne.database.EventiDao;
+import com.biglietOne.database.EventoDetailDao;
+
+public class EventoService {
+
+	@Autowired
+	EventiDao eventiDao;
+	
+	@Autowired
+	EventoDetailDao eventoDetailDao;
+	
+	
+}

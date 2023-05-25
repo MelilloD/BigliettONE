@@ -1,0 +1,31 @@
+package controller;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import service.UserService;
+
+public class UserController {
+	
+	@Autowired
+	private UserService uService;
+	
+	@RequestMapping(method = RequestMethod.POST, path = "/login")
+	public String loginDipendenti(@RequestParam("username") String username, @RequestParam("password") String password, HttpSession session) {
+		
+		session.setAttribute("username", username);
+		session.setAttribute("password", password);
+		
+		if(uService.checkUser(username, password) != null) {
+			return "areaUtente.html";
+		} else {
+			session.setAttribute("errore", "Username o password errata");
+			return "loginPage.html";
+		}	
+	}
+
+}

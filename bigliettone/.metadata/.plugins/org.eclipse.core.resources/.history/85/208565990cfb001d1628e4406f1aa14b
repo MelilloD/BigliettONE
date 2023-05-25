@@ -1,0 +1,27 @@
+package com.biglietOne.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.biglietOne.database.EventiDao;
+import com.biglietOne.database.EventoDetailDao;
+import com.biglietOne.models.Evento;
+
+public class EventoService {
+
+	@Autowired
+	EventiDao eventiDao;
+	
+	@Autowired
+	EventoDetailDao eventoDetailDao;
+	
+	public List<Evento> getEventi(){
+		
+		List<Evento> listaEventi = null;
+		
+		return listaEventi;
+		
+	}
+	
+}

@@ -1,0 +1,17 @@
+package com.biglietOne.models;
+
+import java.sql.Date;
+
+public class Evento {
+	
+	private String categoria;
+	private String titolo;
+	private Date primaData;
+	private Date ultimaData;
+	private Artista artista;
+	private String infoEvento;
+	private String locandina;
+	
+	
+
+}

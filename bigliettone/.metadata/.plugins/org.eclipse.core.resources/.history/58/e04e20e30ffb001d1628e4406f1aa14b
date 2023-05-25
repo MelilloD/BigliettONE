@@ -1,0 +1,13 @@
+package com.biglietOne.TEST;
+
+import com.biglietOne.service.EventoService;
+
+public class TestMain {
+
+	public static void main(String[] args) {
+		
+		EventoService eService = new EventoService();
+
+	}
+
+}

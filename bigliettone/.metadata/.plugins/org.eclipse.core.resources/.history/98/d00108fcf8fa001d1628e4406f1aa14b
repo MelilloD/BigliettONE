@@ -1,0 +1,50 @@
+package com.biglietOne.models;
+
+import java.sql.Date;
+
+public class eventoDetail extends Entity {
+	
+	private Date dataEvento;
+	private Location location;
+	private Evento evento;
+	private int postiLiberi;
+	
+	public void setIdLcoation(int id) {
+		if(location == null) {
+			location = new Location();
+		}
+		location.setId(id);
+	}
+	
+	public int getIdLocation() {
+		location.getId();
+	}
+	
+	public Date getDataEvento() {
+		return dataEvento;
+	}
+	public void setDataEvento(Date dataEvento) {
+		this.dataEvento = dataEvento;
+	}
+	public Location getLocation() {
+		return location;
+	}
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+	public Evento getEvento() {
+		return evento;
+	}
+	public void setEvento(Evento evento) {
+		this.evento = evento;
+	}
+	public int getPostiLiberi() {
+		return postiLiberi;
+	}
+	public void setPostiLiberi(int postiLiberi) {
+		this.postiLiberi = postiLiberi;
+	}
+	
+	
+
+}

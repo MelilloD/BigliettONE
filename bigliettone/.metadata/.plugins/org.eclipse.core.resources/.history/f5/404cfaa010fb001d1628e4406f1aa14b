@@ -1,0 +1,20 @@
+package com.biglietOne.TEST;
+
+import java.util.List;
+
+import com.biglietOne.models.Evento;
+import com.biglietOne.service.EventoService;
+
+public class TestMain {
+
+	public static void main(String[] args) {
+		
+		EventoService eService = new EventoService();
+		
+		List<Evento> listaEventi = eService.getEventi();
+		
+		System.out.println("fermati");
+
+	}
+
+}

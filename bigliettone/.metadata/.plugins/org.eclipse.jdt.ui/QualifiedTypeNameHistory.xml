@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="database.Database"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Scope"/>
+    <fullyQualifiedTypeName name="service.UserService"/>
+    <fullyQualifiedTypeName name="database.UserDao"/>
+    <fullyQualifiedTypeName name="models.Entity"/>
+    <fullyQualifiedTypeName name="models.User"/>
+    <fullyQualifiedTypeName name="com.biglietOne.models.User"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="com.biglietOne.models.Citta"/>
+    <fullyQualifiedTypeName name="com.biglietOne.database.ArtistaDao"/>
+    <fullyQualifiedTypeName name="com.biglietOne.models.Location"/>
+    <fullyQualifiedTypeName name="com.biglietOne.database.EventiDao"/>
+    <fullyQualifiedTypeName name="com.biglietOne.database.LocationDao"/>
+    <fullyQualifiedTypeName name="com.biglietOne.database.IDAO"/>
+    <fullyQualifiedTypeName name="com.biglietOne.database.PrezziDao"/>
+    <fullyQualifiedTypeName name="com.biglietOne.models.Prezzo"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.biglietOne.database.EventoDetailDao"/>
+    <fullyQualifiedTypeName name="com.biglietOne.models.Entity"/>
+    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+    <fullyQualifiedTypeName name="com.biglietOne.service.EventoService"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

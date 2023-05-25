@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+    <head>
+
+        <title>[Bigliett]ONE</title>
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+
+    <body>
+    
+        <div class="header">
+        </div>
+
+
+        <div class="topnav">
+            <a class="active" href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <div class="search-container">
+              <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+          </div>
+        
+        <h1>AREA UTENTE</h1>
+
+        
+
+          <pt h:text="${session.errore}"></p>
+          <p th:text="${session.username}"></p>
+          <p th:text="${session.password}"></p>
+          <p th:text="${session.email}"></p>
+
+    </body>
+
+</html>

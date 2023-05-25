@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+    <head>
+
+        <title>[Bigliett]ONE</title>
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+
+    <body>
+    
+        <div class="header">
+        </div>
+
+
+        <div class="topnav">
+            <a href="/loginPage">Login</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <div class="search-container">
+              <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+          </div>
+        
+        <h1>PAGINA DI LOGIN</h1>
+
+          
+
+          <p th:text="${session.errore}"></p>
+
+    </body>
+
+</html>

@@ -1,0 +1,8 @@
+package com.biglietOne.models;
+
+public class Prezzo extends Entity{
+	
+	private EventoDetail eventoDetail;
+	private float prezzo;
+
+}

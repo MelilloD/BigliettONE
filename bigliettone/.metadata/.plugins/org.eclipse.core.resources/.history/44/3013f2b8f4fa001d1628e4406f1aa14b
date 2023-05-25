@@ -1,0 +1,8 @@
+package com.biglietOne.models;
+
+public class Citta extends Entity{
+
+	private String nomeCitta;
+	
+	
+}

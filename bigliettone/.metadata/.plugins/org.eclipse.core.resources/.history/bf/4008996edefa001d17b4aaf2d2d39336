@@ -1,0 +1,29 @@
+package service;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import database.UserDao;
+import models.Entity;
+
+
+
+public class UserService {
+	
+	@Autowired
+	private UserDao uDao;
+	
+	public boolean checkUser(String username, String password) {
+		boolean check = false;
+		
+		Map<Integer, Entity> map = uDao.read(username, password);
+		
+		if(!map.isEmpty()) {
+			check = true;
+		}
+		
+		return check;
+	}
+
+}

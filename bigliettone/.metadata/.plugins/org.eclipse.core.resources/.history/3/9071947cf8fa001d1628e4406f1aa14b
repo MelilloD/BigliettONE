@@ -1,0 +1,7 @@
+package com.biglietOne.models;
+
+public class eventoDetail extends Entity {
+	
+	
+
+}

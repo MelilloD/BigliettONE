@@ -1,0 +1,12 @@
+package controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import service.UserService;
+
+public class LoginController {
+	
+	@Autowired
+	private UserService uService;
+
+}

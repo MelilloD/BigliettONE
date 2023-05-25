@@ -1,0 +1,41 @@
+package com.biglietOne;
+
+import java.util.Map;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+
+import com.biglietOne.database.Database;
+import com.biglietOne.database.UserDao;
+
+import models.User;
+import service.UserService;
+
+@Configuration
+public class Context {
+
+	
+	@Bean
+	public Database db() {
+		return new Database("db");
+	}
+	
+	@Bean
+	public UserDao userDao() {
+		
+		return new UserDao();
+	}
+	
+	
+	@Bean
+	public UserService getDipendentiService() {
+		return new UserService();
+	}
+	
+	@Bean
+	@Scope("prototype")
+	public User newCliente(Map<String, String> param) {
+		return (User) new User().fromMap(param);
+	}
+}

@@ -1,0 +1,22 @@
+package com.biglietOne;
+
+import org.springframework.context.annotation.Bean;
+
+import database.Database;
+import database.UserDao;
+
+@Configuration
+public class Context {
+
+	
+	@Bean
+	public Database db() {
+		return new Database("db");
+	}
+	
+	@Bean
+	public UserDao userDao() {
+		
+		return new UserDao();
+	}
+}

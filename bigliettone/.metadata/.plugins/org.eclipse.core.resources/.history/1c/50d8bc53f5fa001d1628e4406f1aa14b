@@ -1,0 +1,12 @@
+package com.biglietOne.models;
+
+public class Location extends Entity{
+	
+	private String nomeLocation;
+	private String tipologiaLocation;
+	private Citta citta;
+	private String indirizzoLocation;
+	private int capienza;
+	private String indicazioniStradali;
+
+}

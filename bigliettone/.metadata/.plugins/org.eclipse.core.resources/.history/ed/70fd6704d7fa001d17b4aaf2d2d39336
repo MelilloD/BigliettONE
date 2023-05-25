@@ -1,0 +1,19 @@
+package com.biglietOne;
+
+import database.Database;
+import database.UserDao;
+
+public class Context {
+
+	
+	@Bean
+	public Database db() {
+		return new Database("banca");
+	}
+	
+	@Bean
+	public UserDao userDao() {
+		
+		return new UserDao();
+	}
+}

@@ -1,0 +1,14 @@
+package com.biglietOne.models;
+
+import java.sql.Date;
+
+public class eventoDetail extends Entity {
+	
+	private Date dataEvento;
+	private Location location;
+	private Evento evento;
+	private int postiLiberi;
+	
+	
+
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+    <head>
+
+        <title>[Bigliett]ONE</title>
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+
+    <body>
+    
+        <div class="header">
+        </div>
+
+
+        <div class="topnav">
+            <a class="active" href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <div class="search-container">
+              
+            </div>
+          </div>
+        
+        <h1>PAGINA DI LOGIN</h1>
+
+        <form action="/login" method="post">
+            <div>
+              <label for="username">Username </label>
+              <input
+                     id="username"
+                     type="text"
+                     placeholder="Username"
+                     name="username"
+                     required
+                     />
+            </div>
+  
+            <div>
+              <label for="password">Password </label>
+              <input
+                     id="password"
+                     type="password"
+                     placeholder="password"
+                     name="password"
+                     required
+                     />
+            </div>
+  
+            <button type="submit" value="Log in">
+              Accedi
+            </button>
+          </form>
+
+          <p>th:text="${session.errore}"</p>
+
+    </body>
+
+</html>

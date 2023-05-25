@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+D:\Corso java\progetto_ticketOne\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3570268221.index
+2380077801.index
+109527890.index
+2895316596.index
+4237855803.index
+501938224.index
+2022339555.index

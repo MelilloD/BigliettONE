@@ -1,0 +1,14 @@
+package com.biglietOne.database;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+
+public class ArtistaDao {
+	
+	@Autowired
+	Database db;
+	
+	@Autowired
+	private ApplicationContext context;
+
+}

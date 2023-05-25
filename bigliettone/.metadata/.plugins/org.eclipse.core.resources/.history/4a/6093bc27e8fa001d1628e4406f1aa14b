@@ -1,0 +1,62 @@
+package com.biglietOne.database;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.biglietOne.models.Entity;
+
+public class Database  {
+	
+	private final String user = "root";
+	private final String password = "root";
+	private final String percorso = "jdbc:mysql://localhost:3306/";
+	private final String addDBConn = "?useSSL=false&serverTimezone=UTC";
+	
+	private Connection cn; 
+
+	public Database(String nomeDatabase) {
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			cn = DriverManager.getConnection(percorso + nomeDatabase + addDBConn, user, password);
+			
+		} catch (ClassNotFoundException e) {
+			System.err.println("Classe Driver non trovata !!");
+			e.printStackTrace();
+		} catch (SQLException e) {
+			System.err.println("Impossibile collegarsi al Database");
+			e.printStackTrace();
+		}
+	}
+	
+	public void chiudiConnection() {
+		try {
+			if(cn != null)
+				cn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public Connection getConnection() {
+		return this.cn;
+	}
+	
+	public void chiudiItem(PreparedStatement ps, ResultSet rs) {
+		try {
+			if(ps != null) ps.close();
+			if(rs != null) rs.close();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		} 
+	}
+	
+
+	
+	
+}
