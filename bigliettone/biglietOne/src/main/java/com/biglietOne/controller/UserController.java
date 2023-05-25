@@ -27,13 +27,23 @@ public class UserController {
 		return "index.html";
 	
 	}
-	
+
+	/* PAGINE DI LOGIN E REGISTER */
+
 	@RequestMapping(path = "/loginPage", method = RequestMethod.GET)
-    public String logoutUtente(HttpSession session) {
+    public String loginPage(HttpSession session) {
         
         return "loginPage.html";
     }
+
+	@RequestMapping(path = "/registerPage", method = RequestMethod.GET)
+    public String registerPage(HttpSession session) {
+        
+        return "registerPage.html";
+    }
 	
+	/* ------------------------------------------------- */
+
 	@RequestMapping(method = RequestMethod.POST, path = "/login")
 	public String loginDipendenti(@RequestParam("username") String username, @RequestParam("password") String password, HttpSession session) {
 		
