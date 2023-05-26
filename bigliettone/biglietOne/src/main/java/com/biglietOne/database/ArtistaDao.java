@@ -9,6 +9,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
+import com.biglietOne.models.Artista;
 import com.biglietOne.models.Entity;
 import com.biglietOne.models.User;
 
@@ -43,9 +44,9 @@ public class ArtistaDao implements IDAO{
 				
 				mappaUser.put("Id", id+"");
 				mappaUser.put("NomeArtista", rs.getString("NOME_ARTISTA"));
-				mappaUser.put("InfArtista" , rs.getString("USERNAME"));
+				mappaUser.put("InfArtista" , rs.getString("INF_ARTISTA"));
 				
-				map.put(id, context.getBean(User.class, mappaUser));
+				map.put(id, context.getBean(Artista.class, mappaUser));
 				
 			}
 			
