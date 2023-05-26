@@ -44,6 +44,7 @@ public class CittaDao implements IDAO{
 				
 				mappaCitta.put("Id", id+"");
 				mappaCitta.put("NomeCitta", rs.getString("NOME_CITTA"));
+				mappaCitta.put("Provincia", rs.getString("PROVINCIA"));
 				map.put(id, context.getBean(Citta.class, mappaCitta) );
 				
 			}
