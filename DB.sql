@@ -18,9 +18,11 @@ create table artista (id_artista int primary key auto_increment,
 nome_artista varchar(45),
 inf_artista varchar(45)
 );
-create table citta(id_citta int primary key auto_increment,
+create table citta(
+	id_citta int primary key auto_increment,
     nome_citta varchar (45),
     provincia varchar(45));
+    
 create table locations (id_location int primary key auto_increment,
      nome_location varchar (45),
      tipologia_location varchar (45),
@@ -64,3 +66,14 @@ create table locations (id_location int primary key auto_increment,
      foreign key(id_eventi_details) references eventi_details(id_eventi_details),
      foreign key(id_utente) references utenti(id_utente)
      );
+
+INSERT INTO `db`.`citta` (`id_citta`, `nome_citta`) VALUES ('1', 'milano');
+
+INSERT INTO `db`.`locations` (`id_location`, `nome_location`, `tipologia_location`, `id_citta`, `indirizzo`, `capienza`, `indicazioni_stradali`) VALUES ('1', 'forum assago', 'stadio', '1', 'via bho', '1000', 'prima a destra');
+
+INSERT INTO `db`.`artista` (`id_Artista`, `nome_artista`, `inf_artista`) VALUES ('1', 'Vasco rossi', 'non lo so');
+
+INSERT INTO `db`.`eventi` (`id_eventi`, `categoria`, `titolo`, `prima_data`, `ultima_data`, `id_artista`, `info_evento`) VALUES ('1', 'Rock', 'Vasco in Live', '2023-05-25', '2023-05-30', '1', 'live vasco rossi');
+
+INSERT INTO `db`.`eventi_details` (`id_eventi_details`, `data_evento`, `id_location`, `id_evento`, `posti_liberi`) VALUES ('1', '2023-05-23', '1', '1', '1000');
+INSERT INTO `db`.`eventi_details` (`id_eventi_details`, `data_evento`, `id_location`, `id_evento`, `posti_liberi`) VALUES ('2', '2023-05-30', '1', '1', '1000');
