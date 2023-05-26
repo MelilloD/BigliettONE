@@ -50,8 +50,11 @@
   <table>
     <tbody>
       <tr th:each="evento: ${listaEventi}">
-        <td th:text="${evento.titolo}">
-        </td>
+        <td th:text="${evento.titolo}"></td>
+        <td th:text="${evento.primaData}"></td>
+        <td th:text="${evento.ultimaData}"></td>
+        <td th:text="${evento.infoEvento}"></td>
+        
       </tr>
   </tbody>
   </table>
