@@ -49,6 +49,22 @@ public class User extends Entity {
 	public void setCategoriePreferite(String categoriePreferite) {
 		this.categoriePreferite = categoriePreferite;
 	}
-	
-
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getCognome() {
+		return cognome;
+	}
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	} 	
+	public Date getDataNascita() {
+		return dataNascita;
+	}
+	public void setDataNascita(Date dataNascita) {
+		this.dataNascita = dataNascita;
+	}
 }
