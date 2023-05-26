@@ -44,7 +44,7 @@ public class EventoDetailDao implements IDAO{
 				mappaEventiDetail.put("Id", id+"");
 				mappaEventiDetail.put("Data", rs.getDate("DATA_EVENTO").toString());
 				mappaEventiDetail.put("IdLocation", rs.getInt("ID_LOCATION")+"");
-				mappaEventiDetail.put("IdEventi", rs.getInt("ID_EVENTI")+"");
+				mappaEventiDetail.put("IdEventi", rs.getInt("ID_EVENTO")+"");
 				mappaEventiDetail.put("PostiLiberi", rs.getInt("POSTI_LIBERI")+"");
 				map.put(id, context.getBean(EventoDetail.class, mappaEventiDetail) );
 				
@@ -99,7 +99,7 @@ public class EventoDetailDao implements IDAO{
 	}
 	
 	public Map<Integer, Entity> read(int id) {
-		String query = "select * from EVENTI_DETAILS where ID_EVENTI = ?";
+		String query = "select * from EVENTI_DETAILS where ID_EVENTO = ?";
 		return executeQuery(query, id+"");
 	}
 	
