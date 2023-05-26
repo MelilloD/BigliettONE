@@ -34,6 +34,7 @@ public class UserController {
 		}
 
 		List<Citta> listaCitta = cService.getCitta();
+		
 
         model.addAttribute("listaCitta", listaCitta);
 

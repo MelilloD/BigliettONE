@@ -113,41 +113,32 @@ border-color: #f9a826;
 
 
                  <!-- DROPDOWN  LOCALITA'-->
-             
-                 <li class="nav-item dropdown">
+
+<!--    FUNZIONANTE             <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Località</a>
-                    <ul class="dropdown-menu">
-                      <li class="nav-item dropend">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Milano</a>
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Alcatraz</a></li>
-                            <li><a class="dropdown-item" href="#">Mediolanum Forum</a></li>
-                            <li><a class="dropdown-item" href="#">Stadio San Siro</a></li>
-      
-                          </ul>
-                      </li>
-                      <li class="nav-item dropend">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Roma</a>
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Stadio Olimpico</a></li>
-                            <li><a class="dropdown-item" href="#">Palazzo dello Sport</a></li>
-                            <li><a class="dropdown-item" href="#">Atlantico</a></li>
-      
-                          </ul>
-                      </li>
-                      <li class="nav-item dropend">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Napoli</a>
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Scavi di Pompei</a></li>
-                            <li><a class="dropdown-item" href="#">Stadio Armando Maradona</a></li>
-                            <li><a class="dropdown-item" href="#">Strada</a></li>
-      
-                          </ul>
-                      </li>
-                    </ul>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item dropend" th:each="citta: ${listaCitta}">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="${citta.nomeCitta}"></a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"></a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li> -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Località</a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item dropend" th:each="citta: ${listaCitta}">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="${citta.nomeCitta}"></a>
+                      <ul class="dropdown-menu">
+                        <li th:each="location: ${citta.listaLocation}">
+                          <a class="dropdown-item" href="#" th:text="${location.nomeLocation}"></a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
                 </li>
-
-
+                
 
 
 
