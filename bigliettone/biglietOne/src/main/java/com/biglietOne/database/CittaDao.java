@@ -107,8 +107,8 @@ public class CittaDao implements IDAO{
 
 	@Override
 	public Map<Integer, Entity> read() {
-		// TODO Auto-generated method stub
-		return null;
+		String query = "select * from citta;";
+		return executeQuery(query);
 	}
 	
 	

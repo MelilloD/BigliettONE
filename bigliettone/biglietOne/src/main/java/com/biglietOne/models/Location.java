@@ -4,24 +4,13 @@ public class Location extends Entity{
 	
 	private String nomeLocation;
 	private String tipologiaLocation;
-	private Citta citta;
+	
 	private String indirizzo;
 	private int capienza;
 	private String indicazioniStradali;
 	
 	
-	public void setIdCitta(int id) {
-		
-		if(citta == null) {
-			citta = new Citta();
-		}
-		citta.setId(id);
-		
-	}
 	
-	public int getIdCitta() {
-		return citta.getId();
-	}
 	
 	public String getNomeLocation() {
 		return nomeLocation;
@@ -35,12 +24,7 @@ public class Location extends Entity{
 	public void setTipologiaLocation(String tipologiaLocation) {
 		this.tipologiaLocation = tipologiaLocation;
 	}
-	public Citta getCitta() {
-		return citta;
-	}
-	public void setCitta(Citta citta) {
-		this.citta = citta;
-	}
+	
 	
 	public String getIndirizzo() {
 		return indirizzo;
