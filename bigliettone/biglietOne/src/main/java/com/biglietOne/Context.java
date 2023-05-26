@@ -21,6 +21,7 @@ import com.biglietOne.models.EventoDetail;
 import com.biglietOne.models.Location;
 import com.biglietOne.models.Prezzo;
 import com.biglietOne.models.User;
+import com.biglietOne.service.CittaService;
 import com.biglietOne.service.EventoService;
 import com.biglietOne.service.UserService;
 
@@ -79,6 +80,11 @@ public class Context {
 	@Bean
 	public EventoService getEventoService() {
 		return new EventoService();
+	}
+
+	@Bean
+	public CittaService getCittaService() {
+		return new CittaService();
 	}
 	
 	@Bean

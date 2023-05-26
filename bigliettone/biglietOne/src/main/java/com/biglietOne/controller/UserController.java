@@ -1,14 +1,19 @@
 package com.biglietOne.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.biglietOne.models.Citta;
 import com.biglietOne.models.User;
+import com.biglietOne.service.CittaService;
 import com.biglietOne.service.UserService;
 
 
@@ -18,12 +23,21 @@ public class UserController {
 	
 	@Autowired
 	private UserService uService;
+
+	@Autowired
+    CittaService cService;
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/")
-	public String home(HttpSession session) {
+	public String home(HttpSession session, Model model) {
 		if(session.getAttribute("username") != null) {
 			session.invalidate();
 		}
+
+		List<Citta> listaCitta = cService.getCitta();
+		
+
+        model.addAttribute("listaCitta", listaCitta);
+
 		return "index.html";
 	
 	}
