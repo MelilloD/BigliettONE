@@ -77,3 +77,4 @@ INSERT INTO `db`.`eventi` (`id_eventi`, `categoria`, `titolo`, `prima_data`, `ul
 
 INSERT INTO `db`.`eventi_details` (`id_eventi_details`, `data_evento`, `id_location`, `id_evento`, `posti_liberi`) VALUES ('1', '2023-05-23', '1', '1', '1000');
 INSERT INTO `db`.`eventi_details` (`id_eventi_details`, `data_evento`, `id_location`, `id_evento`, `posti_liberi`) VALUES ('2', '2023-05-30', '1', '1', '1000');
+INSERT INTO `db`.`utenti` (`id_utente`, `username`, `pass`) VALUES ('1', 'admin', 'admin');
