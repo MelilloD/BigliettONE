@@ -121,6 +121,11 @@ public class LocationDao implements IDAO {
 		return executeQuery(query, id+"");
 	}
 
+	public Map<Integer, Entity> readFromIdCitta(int id) {
+		String query = "SELECT * FROM LOCATIONS WHERE ID_CITTA = ?;";
+		return executeQuery(query, id+"");
+	}
+
 
 	@Override
 	public boolean update(Entity e) {
