@@ -108,7 +108,7 @@ public class ArtistaDao implements IDAO{
 
 	
 	public Map<Integer, Entity> read(int id) {
-		String query = "select * from artisti where id_artista = ?";
+		String query = "select * from artista where id_artista = ?";
 		return executeQuery(query, id+"");
 	}
 	
