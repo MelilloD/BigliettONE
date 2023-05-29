@@ -68,6 +68,8 @@ create table locations (id_location int primary key auto_increment,
      );
 
 INSERT INTO `db`.`citta` (`id_citta`, `nome_citta`) VALUES ('1', 'milano');
+INSERT INTO `db`.`citta` (`id_citta`, `nome_citta`) VALUES ('2', 'bologna');
+
 
 INSERT INTO `db`.`locations` (`id_location`, `nome_location`, `tipologia_location`, `id_citta`, `indirizzo`, `capienza`, `indicazioni_stradali`) VALUES ('1', 'forum assago', 'stadio', '1', 'via bho', '1000', 'prima a destra');
 

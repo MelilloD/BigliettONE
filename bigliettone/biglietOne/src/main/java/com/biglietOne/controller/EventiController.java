@@ -34,6 +34,9 @@ public class EventiController {
         List<Citta> listaCitta = cService.getCitta();
 
         model.addAttribute("listaCitta", listaCitta);
+
+        List<String> listaCategorie = eService.getCategorie();
+		model.addAttribute("listaCategorie", listaCategorie);
 	
 		return "paginaEventi.html";
 	

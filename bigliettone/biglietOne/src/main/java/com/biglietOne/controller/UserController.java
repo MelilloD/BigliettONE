@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.biglietOne.models.Citta;
+import com.biglietOne.models.Evento;
 import com.biglietOne.models.User;
 import com.biglietOne.service.CittaService;
+import com.biglietOne.service.EventoService;
 import com.biglietOne.service.UserService;
 
 
@@ -26,6 +28,9 @@ public class UserController {
 
 	@Autowired
     CittaService cService;
+
+	@Autowired
+	EventoService eService;
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/")
 	public String home(HttpSession session, Model model) {
@@ -33,10 +38,16 @@ public class UserController {
 			session.invalidate();
 		}
 
+		List<Evento> listaEventi = eService.getEventi();
+        model.addAttribute("listaEventi", listaEventi);
+
 		List<Citta> listaCitta = cService.getCitta();
 		
 
         model.addAttribute("listaCitta", listaCitta);
+
+		List<String> listaCategorie = eService.getCategorie();
+		model.addAttribute("listaCategorie", listaCategorie);
 
 		return "index.html";
 	

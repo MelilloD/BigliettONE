@@ -9,7 +9,7 @@ public class EventoDetail extends Entity {
 	private int idEventi;
 	private int postiLiberi;
 	
-	public void setIdLcation(int id) {
+	public void setIdLocation(int id) {
 		if(location == null) {
 			location = new Location();
 		}
