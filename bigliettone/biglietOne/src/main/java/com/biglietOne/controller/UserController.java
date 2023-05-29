@@ -65,6 +65,10 @@ public class UserController {
 		session.setAttribute("password", password);
 		User c = uService.checkUser(username, password);
 		if(c != null) {
+			/* da aggiungere nome , cognome ecc. */
+			session.setAttribute("nome", c.getNome());
+			session.setAttribute("cognome", c.getCognome());
+			session.setAttribute("data_nascita", c.getDataNascita());
 			session.setAttribute("email", c.getEmail());
 			return "areaUtente.html";
 		} else {
@@ -72,6 +76,18 @@ public class UserController {
 			return "loginPage.html";
 		}	
 	}
+
+	@RequestMapping(path = "/checkout", method = RequestMethod.GET)
+    public String checkOut(HttpSession session) {
+        
+        return "checkout.html";
+    }
+
+	@RequestMapping(path = "/logout", method = RequestMethod.GET)
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/";
+    }
 	
 	
 

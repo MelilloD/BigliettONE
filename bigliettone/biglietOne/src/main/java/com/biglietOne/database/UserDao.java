@@ -49,6 +49,7 @@ public class UserDao  implements IDAO {
 				mappaUser.put("Cognome",rs.getString("COGNOME"));
 				mappaUser.put("EventiPreferiti",rs.getString("EVENTI_PREFERITE"));
 				mappaUser.put("CategoriePreferite",rs.getString("CATEGORIE_PREFERITE"));
+				mappaUser.put("DataNascita", rs.getString("DATA_NASCITA"));
 				
 				map.put(id, context.getBean(User.class, mappaUser));
 				
