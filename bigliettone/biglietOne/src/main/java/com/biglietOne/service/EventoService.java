@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.yaml.snakeyaml.events.Event;
 
 import com.biglietOne.database.ArtistaDao;
 import com.biglietOne.database.EventiDao;
@@ -63,6 +64,19 @@ public class EventoService {
 		
 		return listaEventi;
 		
+	}
+
+	public Evento getEvento(String idEvento){
+		Evento e = null;
+		
+		Map<Integer, Entity> mapEventi = eventiDao.read(Integer.parseInt(idEvento));
+		for(Entry<Integer, Entity> entryEventi : mapEventi.entrySet()) {
+			
+			e = (Evento) entryEventi.getValue();
+
+		}
+
+		return e;
 	}
 	
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.biglietOne.models.Citta;
 import com.biglietOne.models.Evento;
@@ -39,15 +40,18 @@ public class EventiController {
 	}
 
     @RequestMapping(method = RequestMethod.GET, path = "/paginaEvento")
-    public String evento(HttpSession session, Model model) {
+    public String evento(@RequestParam("idEvento") String idEvento, HttpSession session, Model model) {
 
-        List<Evento> listaEventi = eService.getEventi();
-        model.addAttribute("listaEventi", listaEventi); 
+        Evento e =  eService.getEvento(idEvento);
+
+        model.addAttribute("evento", e);
 
 
         return "paginaEvento.html" ;
     
     }
+
+
     @RequestMapping(method = RequestMethod.GET, path = "/paginaDettagliEvento")
         public String dettaglioEvento(HttpSession session, Model model) {
     
