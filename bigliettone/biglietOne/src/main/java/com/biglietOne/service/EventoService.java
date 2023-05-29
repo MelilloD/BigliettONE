@@ -107,6 +107,71 @@ public class EventoService {
 		
 	}
 
+
+	public List<Evento> getEventiFromIdCitta(int idCitta){
+		
+		List<Evento> listaEventi = new ArrayList<Evento>();
+		
+		Map<Integer, Entity> mapEventi = eventiDao.readFromIdCitta(idCitta);
+		if(!mapEventi.isEmpty()){
+			for(Entry<Integer, Entity> entryEventi : mapEventi.entrySet()) {
+				
+				Evento e = (Evento) entryEventi.getValue();
+				
+				Map<Integer,Entity> mapArtista =  artistaDao.read(e.getArtista().getId());
+				
+				if(!mapArtista.isEmpty()){
+					Artista a = null;
+					for(Entry artista : mapArtista.entrySet()){
+						a = (Artista) artista.getValue();
+						break;
+					}
+		
+					e.setArtista(a);
+				}
+				
+				
+				Map<Integer, Entity> mapEventiDetail = eventoDetailDao.read(e.getId());
+				if(!mapEventiDetail.isEmpty()){
+					for(Entry<Integer, Entity> entryEventiDetail : mapEventiDetail.entrySet()) {
+						
+						EventoDetail eD = (EventoDetail) entryEventiDetail.getValue();
+						
+
+						Map<Integer, Entity> mapLocation = locationDao.read(eD.getIdLocation());
+						Location l = null;
+						if(!mapLocation.isEmpty()){
+							for(Entry<Integer, Entity> location : mapLocation.entrySet()){
+								l = (Location) location.getValue();
+								eD.setLocation(l);
+								break;
+							}
+
+							Map<Integer,Entity> mapCitta =  cittaDao.read(l.getIdCitta());
+							if(!mapCitta.isEmpty()){
+								for(Entry<Integer, Entity> citta : mapCitta.entrySet()){
+									Citta c = (Citta) citta.getValue();
+									l.setCitta(c);
+									break;
+								}
+
+							}
+
+						}
+						e.getListaEventoDetails().add(eD);
+
+						
+					}
+				}
+				listaEventi.add(e);
+				
+			}
+		}
+		
+		return listaEventi;
+		
+	}
+
 	public Evento getEvento(String idEvento){
 		Evento e = null;
 		

@@ -1,6 +1,8 @@
 package com.biglietOne.controller;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -26,10 +28,18 @@ public class EventiController {
     CittaService cService;
 
     @RequestMapping(method = RequestMethod.GET, path = "/paginaEventi")
-	public String home(HttpSession session, Model model) {
+	public String home(@RequestParam Map<String, String> params ,HttpSession session, Model model) {
+        List<Evento> listaEventi = new ArrayList<Evento>();
 
-        List<Evento> listaEventi = eService.getEventi();
-        model.addAttribute("listaEventi", listaEventi);
+        String tipo = params.get("tipo");
+        if("citta".equals(tipo)){
+            int idCitta = Integer.parseInt(params.get("idCitta"));
+            listaEventi = eService.getEventiFromIdCitta(idCitta);
+            model.addAttribute("listaEventi", listaEventi);
+        }
+
+       // List<Evento> listaEventi = eService.getEventi();
+       //  
 
         List<Citta> listaCitta = cService.getCitta();
 
