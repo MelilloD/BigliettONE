@@ -38,11 +38,17 @@ public class EventiController {
             model.addAttribute("listaEventi", listaEventi);
         }
 
+        if("categoria".equals(tipo)){
+            String categoria = params.get("categoria");
+            listaEventi = eService.getEventiFromCategoria(categoria);
+            model.addAttribute("listaEventi", listaEventi);
+        }
+
        // List<Evento> listaEventi = eService.getEventi();
        //  
 
         List<Citta> listaCitta = cService.getCitta();
-
+ 
         model.addAttribute("listaCitta", listaCitta);
 
         List<String> listaCategorie = eService.getCategorie();
