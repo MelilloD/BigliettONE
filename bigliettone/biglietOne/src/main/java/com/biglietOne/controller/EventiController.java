@@ -28,5 +28,13 @@ public class EventiController {
 		return "paginaEventi.html";
 	
 	}
+
+    @RequestMapping(method = RequestMethod.GET, path = "/paginaEvento")
+	public String evento(HttpSession session, Model model) {
+
+       
+		return "paginaEvento.html";
+	
+	}
     
 }
