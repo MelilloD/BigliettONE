@@ -127,15 +127,22 @@ display: block;
                 <!-- FINE DROPDOWN EVENTI -->  
                  <!-- DROPDOWN  LOCALITA'-->
 
-                  <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Località
-                    </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" th:href="@{/paginaEventi?tipo=citta&idCitta={id}(id=${citta.id})}" th:each="citta: ${listaCitta}" th:text="${citta.nomeCitta}"></a>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Località
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <div th:each="citta: ${listaCitta}" class="nav-item dropend">
+                          <div class="dropdown">
+                              <a class="dropdown-item dropdown-toggle" th:href="@{/paginaEventi(tipo='citta', idCitta=${citta.id})}" th:text="${citta.nomeCitta}"></a>
+                              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                  <a th:each="location: ${citta.listaLocation}" class="dropdown-item" th:href="@{/paginaEventi(tipo='location', idLocation=${location.id})}" th:text="${location.nomeLocation}"></a>
+                              </div>
+                          </div>
                       </div>
                   </div>
-
+              </div>
+              
                 <!-- FINE DROPDOWN LOCALITA' -->            
         
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
