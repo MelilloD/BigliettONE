@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.rectangle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 100px;
+    height: 400px; /* Altezza del rettangolo uguale all'altezza della foto */
+}
+
+.left-panel {
+    flex: 1;
+    background-color: #495057;;
+    height: 400px; /* Altezza del pannello uguale all'altezza della foto */
+    text-align: center;
+    vertical-align: center;
+    color: rgb(250, 249, 249);
+}
+
+.center {
+  padding: 70px 0;
+}
+/* .left-panel {
+    margin-right: 10px;  Aggiungi margine destro per separare i pannelli 
+}  */
+
+/* .right-panel {
+    margin-left: 10px;  Aggiungi margine sinistro per separare i pannelli 
+} */
+
+.photo {
+  height: 400px;
+  width: auto;
+  position: relative;
+}
+
+.rectangle2 {
+    position: relative;
+    text-align: left;
+    padding: 20px;
+    margin: 0 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #dbe2e9;
+    height: 500px;
+}
+.infoEvento {
+    text-align: left;
+}
+
+.rettangolino {
+   width: 1000px; 
+   height: 20px; 
+   background-color: rgb(10, 0, 0); 
+   border: 2px solid black;
+   margin-top: 10px;
+}
+
+     
+</style>
+
+
+</head>
+<body>
+    <div class="rectangle">
+        <div class="left-panel">
+        <div class="center">
+            <h1>Titolo</h1>
+        <h2>Scopri i dettagli e acquista il tuo biglietto</h2>
+        <h2>le date</h2>
+        <h2>biglietti da ...</h2>
+        <br>
+        <button style="background-color: white; color:blue;height: 60px; width: 170px;font-size: large;">Acquista ora</button>
+        </div>
+        </div>
+        <img class="photo" src="/img/alice.jpeg" alt="Foto">
+        <div class="right-panel"></div>
+    </div>
+    <div class="rectangle2" style="background-color: #a4acb4;">
+    </div>
+        <div class="rectangle2" style="background-color: #dbe2e9;" display="flex">
+            <div style="display: flex; align-items: center;">
+                <h2 class="infoEvento" style="margin-right: 30px;">Info evento</h2>
+                <div class="rettangolino"></div>
+            </div>
+            <p class="infoEvento">info</p>
+        </div>
+</body>
+</html>
+
+ 
