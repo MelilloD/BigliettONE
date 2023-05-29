@@ -203,25 +203,32 @@
       </script>
 
 
-
-    <input type="text" id="myInputCitta" onkeyup="myFunction()" placeholder="Città" title="Citta" name="citta">
-    <input type="text" id="myInputEventi" onkeyup="myFunction()" placeholder="Altri eventi" title="Eventi" name="categoria" >
-    <input type="date" id="myInputDataInizio" onchange="myFunction()" placeholder="Da data" title="Data inizio" name="da">
-    <input type="date" id="myInputDataFine" onchange="myFunction()" placeholder="A data" title="Data fine" name="a">
-    <label for="myInputAcquistabile">Acquistabile</label>
-    <input type="checkbox" id="myInputAcquistabile" onclick="myFunction()">
+<table id="myTable">
+  <thead>
+    <tr>
+      <th><input type="text" id="myInputCitta" onkeyup="myFunction()" placeholder="Città" title="Citta" name="citta"></th>
+      <th><input type="text" id="myInputEventi" onkeyup="myFunction()" placeholder="Altri eventi" title="Eventi" name="categoria" ></th>
+      <th><input type="date" id="myInputDataInizio" onchange="myFunction()" placeholder="Da data" title="Data inizio" name="da"></th>
+      <th><input type="date" id="myInputDataFine" onchange="myFunction()" placeholder="A data" title="Data fine" name="a"></th>
+<!--     <label for="myInputAcquistabile">Acquistabile</label>
+    <input type="checkbox" id="myInputAcquistabile" onclick="myFunction()"> -->
+  </tr>
     
-    <table id="myTable">
-      <tr>
-        <td>Milano</td>
-        <td>Festival</td>
-        <td>2023-06-06</td>
+        <tr>
+          <th>Titolo</th>
+          <th>Categoria</th>
+          <th>Prima Data</th>
+          <th>Ultima Data</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr th:each = "evento: ${listaEventi}">
+        <td th:text = "${evento.titolo}"></td>
+        <td th:text = "${evento.categoria}"></td>
+        <td th:text = "${evento.primaData}"></td>
+        <td th:text = "${evento.ultimaData}"></td>
       </tr>
-      <tr>
-        <td>Roma</td>
-        <td>Jazz</td>
-        <td>2023-08-10</td>
-      </tr>
+    </tbody>
     </table>
     
  <!-- INIZIO FOOTER -->

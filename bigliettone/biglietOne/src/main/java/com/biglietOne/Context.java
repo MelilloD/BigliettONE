@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 import com.biglietOne.database.ArtistaDao;
+import com.biglietOne.database.CategoriaDao;
 import com.biglietOne.database.CittaDao;
 import com.biglietOne.database.Database;
 import com.biglietOne.database.EventiDao;
@@ -66,6 +67,11 @@ public class Context {
 	@Bean
 	public LocationDao locationDao(){
 	    return new LocationDao();
+	}
+
+	@Bean
+	public CategoriaDao categoriaDao(){
+	    return new CategoriaDao();
 	}
 	
 	
