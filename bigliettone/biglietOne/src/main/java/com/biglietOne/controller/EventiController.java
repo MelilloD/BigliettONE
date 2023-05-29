@@ -46,6 +46,12 @@ public class EventiController {
 
 
         return "paginaEvento.html" ;
+    
+    }
+    @RequestMapping(method = RequestMethod.GET, path = "/paginaDettagliEvento")
+        public String dettaglioEvento(HttpSession session, Model model) {
+    
+            return "paginaDettagliEvento.html" ;
     }
     
 }
