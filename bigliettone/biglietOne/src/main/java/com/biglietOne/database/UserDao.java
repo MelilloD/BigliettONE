@@ -39,7 +39,7 @@ public class UserDao  implements IDAO {
 				
 				Map<String, String> mappaUser = new HashMap<String, String>();
 				
-				int id = rs.getInt("ID_UTENTI");
+				int id = rs.getInt("ID_UTENTE");
 				
 				mappaUser.put("Id", id+"");
 				mappaUser.put("Email", rs.getString("EMAIL"));
