@@ -105,6 +105,11 @@ public class EventiDao implements IDAO {
 	    return executeQuery(query, id+"");
 	}
 
+	public Map<Integer, Entity> readFromCategoria(String categoria) {
+	    String query = "select * from EVENTI where CATEGORIA = ?";
+	    return executeQuery(query, categoria);
+	}
+
 	public Map<Integer, Entity> readFromIdCitta(int idCitta){
 		String query = 
 				"select distinct  e.id_eventi, e.id_eventi_details, e.categoria, e.titolo, e.prima_data, e.ultima_data, e.id_artista, e.info_evento, e.locandina from citta c join locations l on c.id_citta = l.id_citta join eventi_details ed on l.id_location = ed.id_location join eventi e on ed.id_evento = e.id_eventi where c.id_citta = ?;";
