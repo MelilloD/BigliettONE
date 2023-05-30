@@ -11,7 +11,6 @@ import org.springframework.context.ApplicationContext;
 
 import com.biglietOne.models.Artista;
 import com.biglietOne.models.Entity;
-import com.biglietOne.models.User;
 
 public class ArtistaDao implements IDAO{
 	
