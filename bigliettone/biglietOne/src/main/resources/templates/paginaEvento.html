@@ -150,8 +150,8 @@
         <div class="center">
         <h1 th:text="${evento.titolo}"></h1>
         <h2 >Scopri i dettagli e acquista il tuo biglietto</h2>
-        <h2 th:text="${evento.primaData} + ' ' +${evento.ultimaData}"></h2>
-        <h2 th:text="${evento.}">biglietti da ...</h2>
+        <h2 th:text="${evento.primaData} + ' - ' +${evento.ultimaData}"></h2>
+        <h2 >biglietti da ...</h2>
         <br>
         <button style="background-color: white; color:blue;height: 60px; width: 170px;font-size: large;">Acquista ora</button>
         </div>
@@ -166,7 +166,7 @@
                 <h2 class="infoEvento" style="margin-right: 30px;">Info evento</h2>
                 <div class="rettangolino"></div>
             </div>
-            <p class="infoEvento">info</p>
+            <p class="infoEvento">Biografia</p>
         </div>
 
 
