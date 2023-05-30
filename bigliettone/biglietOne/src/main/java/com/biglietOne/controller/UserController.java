@@ -81,6 +81,8 @@ public class UserController {
 			session.setAttribute("cognome", c.getCognome());
 			session.setAttribute("data_nascita", c.getDataNascita());
 			session.setAttribute("email", c.getEmail());
+/* 			session.setAttribute("cittaUser", c.getCitta());
+			session.setAttribute("provinciaUser", c.getProvincia()); */
 			return "areaUtente.html";
 		} else {
 			session.setAttribute("errore", "Username o password errata");

@@ -11,6 +11,8 @@ public class User extends Entity {
 	private String email;
 	private String username;
 	private String password;
+	private String citta;
+	private String provincia;
 	private String eventiPreferiti;
 	private String categoriePreferite;
 	@Override
@@ -66,5 +68,17 @@ public class User extends Entity {
 	}
 	public void setDataNascita(Date dataNascita) {
 		this.dataNascita = dataNascita;
+	}
+	public void setCitta(String citta) {
+		this.citta = citta;
+	} 
+	public void setProvincia(String provincia) {
+		this.provincia = provincia;
+	} 
+	public String getCitta() {
+		return citta;
+	}
+	public String getProvincia() {
+		return provincia;
 	}
 }

@@ -47,6 +47,8 @@ public class UserDao  implements IDAO {
 				mappaUser.put("Password" , rs.getString("PASS"));
 				mappaUser.put("Nome",rs.getString("NOME"));
 				mappaUser.put("Cognome",rs.getString("COGNOME"));
+				mappaUser.put("Citta",rs.getString("CITTA"));
+				mappaUser.put("Provincia",rs.getString("PROVINCIA"));
 				mappaUser.put("EventiPreferiti",rs.getString("EVENTI_PREFERITE"));
 				mappaUser.put("CategoriePreferite",rs.getString("CATEGORIE_PREFERITE"));
 				mappaUser.put("DataNascita", rs.getString("DATA_NASCITA"));
@@ -106,10 +108,10 @@ public class UserDao  implements IDAO {
 
 	@Override
 	public boolean create(Entity e) {
-		String query = "insert into utenti (EMAIL,NOME,COGNOME,DATA_NASCITA, USERNAME, PASS,EVENTI_PREFERITE,CATEGORIE_PREFERITE) values (?, ?, ?,?,?,?,?,?);";
+		String query = "insert into utenti (EMAIL,NOME,COGNOME,DATA_NASCITA, USERNAME, PASS,EVENTI_PREFERITE,CATEGORIE_PREFERITE,CITTA,PROVINCIA) values (?, ?, ?,?,?,?,?,?,?,?);";
 		User u = (User) e;
 		
-		return executeUpdate(query, u.getEmail(),u.getNome(),u.getCognome(),u.getDataNascita().toString(), u.getUsername(), u.getPassword(),u.getEventiPreferiti(),u.getCategoriePreferite());
+		return executeUpdate(query, u.getEmail(),u.getNome(),u.getCognome(),u.getDataNascita().toString(), u.getUsername(), u.getPassword(),u.getEventiPreferiti(),u.getCategoriePreferite(),u.getCitta(), u.getProvincia());
 	}
 	
 	public Map<Integer, Entity> read(String username, String password) {
