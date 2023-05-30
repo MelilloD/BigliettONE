@@ -30,12 +30,13 @@ public class EventiController {
     @RequestMapping(method = RequestMethod.GET, path = "/paginaEventi")
 	public String home(@RequestParam Map<String, String> params ,HttpSession session, Model model) {
         List<Evento> listaEventi = new ArrayList<Evento>();
-
+        
         String tipo = params.get("tipo");
         if("citta".equals(tipo)){
             int idCitta = Integer.parseInt(params.get("idCitta"));
             listaEventi = eService.getEventiFromIdCitta(idCitta);
             model.addAttribute("listaEventi", listaEventi);
+            
         }
 
         if("categoria".equals(tipo)){
@@ -59,7 +60,7 @@ public class EventiController {
 	}
 
     @RequestMapping(method = RequestMethod.GET, path = "/paginaEvento")
-    public String evento(@RequestParam("idEvento") String idEvento, HttpSession session, Model model) {
+    public String evento( @RequestParam("idEvento") String idEvento , HttpSession session, Model model) {
 
         Evento e =  eService.getEvento(idEvento);
 
