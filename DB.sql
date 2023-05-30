@@ -1,18 +1,7 @@
 drop database db;
 create database db;
 use db ;
-create table Utenti
-( 
- id_utente int primary key auto_increment,
- nome varchar(45),
- cognome varchar(45),
- data_nascita date,
- email varchar(45),
- username varchar(45),
- pass varchar(45),
- eventi_preferite varchar(45),
- categorie_preferite varchar(45)
- );
+
  
 create table artista (id_artista int primary key auto_increment, 
 nome_artista varchar(45),
@@ -22,6 +11,21 @@ create table citta(
 	id_citta int primary key auto_increment,
     nome_citta varchar (45),
     provincia varchar(45));
+
+create table Utenti
+( 
+ id_utente int primary key auto_increment,
+ nome varchar(45),
+ cognome varchar(45),
+ data_nascita date,
+ id_citta int,
+ email varchar(45),
+ username varchar(45),
+ pass varchar(45),
+ eventi_preferite varchar(45),
+ categorie_preferite varchar(45),
+ foreign key (id_citta) references citta(id_citta)
+ );
     
 create table locations (id_location int primary key auto_increment,
      nome_location varchar (45),
