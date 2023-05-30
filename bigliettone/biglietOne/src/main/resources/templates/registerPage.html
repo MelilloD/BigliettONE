@@ -33,7 +33,7 @@
             <div class="card">
               <div class="card-body py-5 px-md-5">
                 <!-- form del login -->
-                <form action="/" method="post">
+                <form action="/registrazione" method="post">
                   <!-- 2 column grid layout with text inputs for the first and last names -->
 
                   <!-- Nome form-->
@@ -44,14 +44,14 @@
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <label class="form-label" for="nome">Nome</label>
-                        <input type="text" id="nome" class="form-control" placeholder="Inserisci nome" name="nome" required/>
+                        <label class="form-label" for="Nome">Nome</label>
+                        <input type="text" id="Nome" class="form-control" placeholder="Inserisci nome" name="Nome" required/>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <label class="form-label" for="cognome">Cognome</label>
-                        <input type="text" id="cognome" class="form-control" placeholder="Inserisci cognome" name="cognome" required/>
+                        <label class="form-label" for="Cognome">Cognome</label>
+                        <input type="text" id="Cognome" class="form-control" placeholder="Inserisci cognome" name="Cognome" required/>
                       </div>
                     </div>
                   </div>
@@ -61,8 +61,8 @@
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <label class="form-label" for="dataNascita">Data di nascita</label>
-                        <input type="date" id="dataNascita" class="form-control" placeholder="Inserisci data di nascita" name="dataNascita" required/>
+                        <label class="form-label" for="DataNascita">Data di nascita</label>
+                        <input type="date" id="DataNascita" class="form-control" placeholder="Inserisci data di nascita" name="DataNascita" required/>
                       </div>
                     </div>
                   </div>
@@ -72,14 +72,14 @@
                   <!-- residenza-->
                   <div class="row">
                     <div class="col-md-6 mb-4">
-                      <label class="form-label" for="città">Città</label>
-                      <input type="text" id="città" class="form-control" placeholder="Inserisci città" name="città" required/>
+                      <label class="form-label" for="CittaUser">Città</label>
+                      <input type="text" id="CittaUser" class="form-control" placeholder="Inserisci città" name="CittaUser" required/>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <div class="form-outline">
-                          <label class="form-label" for="provincia">Provincia</label>
-                          <input type="text" id="provincia" class="form-control" placeholder="Inserisci provincia" name="provincia" required/>
+                          <label class="form-label" for="ProvinciaUser">Provincia</label>
+                          <input type="text" id="ProvinciaUser" class="form-control" placeholder="Inserisci provincia" name="ProvinciaUser" required/>
                         </div>
                       </div>
                     </div>
@@ -90,8 +90,8 @@
 
                   <div class="row">
                     <div class="col-md-6 mb-4">
-                      <label class="form-label" for="email">Email</label>
-                      <input type="email" id="email" class="form-control" placeholder="Inserisci email" name="email" required/>
+                      <label class="form-label" for="Email">Email</label>
+                      <input type="email" id="Email" class="form-control" placeholder="Inserisci email" name="Email" required/>
                     </div>
                   </div>
 
@@ -100,24 +100,26 @@
 
                   <!-- Username input -->
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="username">Username</label>
-                    <input type="text" id="username" class="form-control" name="username" required>
+                    <label class="form-label" for="Username">Username</label>
+                    <input type="text" id="Username" class="form-control" name="Username" required>
                     
                   </div>
   
                   <!-- Password input -->
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="password">Password</label>
-                    <input type="password" id="password" class="form-control" name="password" required>
+                    <label class="form-label" for="Password">Password</label>
+                    <input type="password" id="Password" class="form-control" name="Password" required>
+                    <input type="hidden" id="EventiPreferiti" name="EventiPreferiti" value="Niente">
+                    <input type="hidden" id="CategoriePreferite" name="CategoriePreferite" value="Niente">
                   </div>
   
                   <!-- Checkbox -->
-                  <div class="form-check d-flex justify-content-left mb-4">
+<!--                   <div class="form-check d-flex justify-content-left mb-4">
                     <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
                     <label class="form-check-label" for="form2Example33">
                       Ricordami
                     </label>
-                  </div>
+                  </div> -->
                   
 
                   <!-- Submit button -->

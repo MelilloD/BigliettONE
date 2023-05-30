@@ -1,6 +1,7 @@
 package com.biglietOne.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.biglietOne.models.Citta;
+import com.biglietOne.models.Entity;
 import com.biglietOne.models.Evento;
 import com.biglietOne.models.User;
 import com.biglietOne.service.CittaService;
@@ -81,8 +83,8 @@ public class UserController {
 			session.setAttribute("cognome", c.getCognome());
 			session.setAttribute("data_nascita", c.getDataNascita());
 			session.setAttribute("email", c.getEmail());
-/* 			session.setAttribute("cittaUser", c.getCitta());
-			session.setAttribute("provinciaUser", c.getProvincia()); */
+			session.setAttribute("citta_user", c.getCittaUser());
+			session.setAttribute("provincia_user", c.getProvinciaUser());
 			return "areaUtente.html";
 		} else {
 			session.setAttribute("errore", "Username o password errata");
@@ -101,6 +103,29 @@ public class UserController {
         session.invalidate();
         return "redirect:/";
     }
+
+	@RequestMapping(method = RequestMethod.POST, path = "/registrazione")
+	public String registrazione(@RequestParam Map<String, String> params, HttpSession session) 
+	{
+		if(!params.isEmpty())
+		{
+			uService.addUser(params);
+			String username = params.get("Username");
+			String password = params.get("Password");
+			session.setAttribute("username", username);
+			session.setAttribute("password", password);
+			User c = uService.checkUser(username, password);
+			session.setAttribute("nome", c.getNome());
+			session.setAttribute("cognome", c.getCognome());
+			session.setAttribute("data_nascita", c.getDataNascita());
+			session.setAttribute("email", c.getEmail());
+			session.setAttribute("citta_user", c.getCittaUser());
+			session.setAttribute("provincia_user", c.getProvinciaUser());
+			return "areaUtente.html";
+		}
+		else
+			return "redirect:/";
+	}
 	
 	
 
