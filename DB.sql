@@ -67,8 +67,10 @@ create table locations (id_location int primary key auto_increment,
      id_prenotazione int primary key auto_increment,
      id_utente int,
      id_eventi_details int,
+     id_prezzo,
      foreign key(id_eventi_details) references eventi_details(id_eventi_details),
-     foreign key(id_utente) references utenti(id_utente)
+     foreign key(id_utente) references utenti(id_utente),
+     foreign key(id_prezzo) references prezzi(id_prezzi)
      );
 
 INSERT INTO `db`.`citta` (`id_citta`, `nome_citta`) VALUES ('1', 'milano');
