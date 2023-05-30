@@ -64,122 +64,143 @@
   .carousel .slick-next::before {
     content: "\203A";
   }
+      
+
+  .dropdown .dropdown-menu{
+      display: none;
+    }
+
+    .dropdown:hover > .dropdown-menu , .dropend:hover > .dropdown-menu {
+      display: block;
+      
+    } 
+    
+    
+
+    @media screen and (min-width: 769px){
+      .dropend:hover > .dropdown-menu{
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+    }
+
+    .border-rad{
+
+border-top-right-radius: 28px;
+border-bottom-right-radius: 28px;
+
+color: #fff;
+background-color: #f9a826;
+border-color: #f9a826;
+}
+
+
+
+
+.border-rad:hover{
+
+ background-color: #f9a826;
+border-color: #f9a826;
+
+}
+
+
+
   </style>
 </head>
 <body>
 
-<!-- INIZIO HEADER -->
+    <!-- INIZIO HEADER -->
 
-<div class="sticky-top">
-  <div>
-    <img src="/img/index_splash.jpg" style="width: 100%" class="img-fluid" alt="[Bigliett]ONE">
-  </div>
-    <header class="p-3 text-bg-dark">
-        <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-            </a>
-            <div>
-              <a href="/"><img style="width: 60%" class="left" src="/img/logo.png" alt=""></a>
-            </div>
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="/paginaEventi" class="nav-link px-2 text-white">Eventi</a></li>
-            <li><a href="/paginaLocalita" class="nav-link px-2 text-white">Località</a></li>
+    <div class="sticky-top">
+      <div>
+        <img src="/img/index_splash.jpg" style="width: 100%" class="img-fluid" alt="[Bigliett]ONE">
+      </div>
+        <header class="p-3 text-bg-dark">
+            <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+                <div>
+                  <a href="/"><img style="width: 60%" class="left" src="/img/logo.png" alt=""></a>
+                </div>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="/paginaEventi" class="nav-link px-2 text-white">Eventi</a></li>
+                <li><a href="/paginaLocalita" class="nav-link px-2 text-white">Località</a></li>
 
-              <!-- DROPDOWN  EVENTI-->
-         
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Eventi</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item dropend">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Concerti</a>
+                  <!-- DROPDOWN  EVENTI-->
+             
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Eventi</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item dropend">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Concerti</a>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Pop & Rock</a></li>
+                            <li><a class="dropdown-item" href="#">Metal</a></li>
+                            <li><a class="dropdown-item" href="#">Jaz</a></li>
+      
+                          </ul>
+                      </li>
+                      <li class="nav-item dropend">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sport</a>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Calcio</a></li>
+                            <li><a class="dropdown-item" href="#">Automobilismo</a></li>
+                            <li><a class="dropdown-item" href="#">Tennis</a></li>
+      
+                          </ul>
+                      </li>
+                      <li class="nav-item dropend">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mostre e Musei</a>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Mostre d'arte di storia</a></li>
+                            <li><a class="dropdown-item" href="#">Musei e siti archeologici</a></li>
+                            <li><a class="dropdown-item" href="#">Visite guidate</a></li>
+      
+                          </ul>
+                      </li>
+                    </ul>
+                </li>
+
+                 <!-- DROPDOWN  LOCALITA'-->
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Località</a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item dropend" th:each="citta: ${listaCitta}">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="${citta.nomeCitta}"></a>
                       <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Pop & Rock</a></li>
-                        <li><a class="dropdown-item" href="#">Metal</a></li>
-                        <li><a class="dropdown-item" href="#">Jaz</a></li>
-  
+                        <li th:each="location: ${citta.listaLocation}">
+                          <a class="dropdown-item" href="#" th:text="${location.nomeLocation}"></a>
+                        </li>
                       </ul>
-                  </li>
-                  <li class="nav-item dropend">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sport</a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Calcio</a></li>
-                        <li><a class="dropdown-item" href="#">Automobilismo</a></li>
-                        <li><a class="dropdown-item" href="#">Tennis</a></li>
-  
-                      </ul>
-                  </li>
-                  <li class="nav-item dropend">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mostre e Musei</a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Mostre d'arte di storia</a></li>
-                        <li><a class="dropdown-item" href="#">Musei e siti archeologici</a></li>
-                        <li><a class="dropdown-item" href="#">Visite guidate</a></li>
-  
-                      </ul>
-                  </li>
+                    </li>
+                  </ul>
+                </li>
+                
+
+
+
+               
                 </ul>
-            </li>
-
-
-
-             <!-- DROPDOWN  LOCALITA'-->
-         
-             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Località</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item dropend">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Milano</a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Alcatraz</a></li>
-                        <li><a class="dropdown-item" href="#">Mediolanum Forum</a></li>
-                        <li><a class="dropdown-item" href="#">Stadio San Siro</a></li>
-  
-                      </ul>
-                  </li>
-                  <li class="nav-item dropend">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Roma</a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Stadio Olimpico</a></li>
-                        <li><a class="dropdown-item" href="#">Palazzo dello Sport</a></li>
-                        <li><a class="dropdown-item" href="#">Atlantico</a></li>
-  
-                      </ul>
-                  </li>
-                  <li class="nav-item dropend">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Napoli</a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Scavi di Pompei</a></li>
-                        <li><a class="dropdown-item" href="#">Stadio Armando Maradona</a></li>
-                        <li><a class="dropdown-item" href="#">Strada</a></li>
-  
-                      </ul>
-                  </li>
-                </ul>
-            </li>
-
-
-
-
-
-           
-            </ul>
-    
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-            <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
-            </form>
-    
-            <div class="text-end">
-            <button type="button" class="btn btn-outline-light me-2"><a href="/loginPage">Login</a></button>
-            <button type="button" class="btn btn-warning"><a href="/registerPage">Register</a></button>
+        
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                </form>
+        
+                <div class="text-end">
+                <button type="button" class="btn btn-outline-light me-2"><a href="/loginPage">Login</a></button>
+                <button type="button" class="btn btn-warning"><a href="/registerPage">Register</a></button>
+                </div>
             </div>
-        </div>
-        </div>
-    </header>
-</div>
+            </div>
+        </header>
+    </div>
 
-<!-- FINE HEADER -->
+  <!-- FINE HEADER -->
 
 <div class="carousel">
   <div th:each="evento : ${listaEventi}">
@@ -231,6 +252,104 @@
     </tbody>
     </table>
     
+    <!-- Newsletter-->
+  <div class="row d-flex justify-content-center align-items-center rows">
+
+    <div class="col-md-6">
+
+
+        <div class="card">
+
+
+            <div class="text-center">
+                <h2>Newsletter</h2>
+                <img src="https://i.imgur.com/Dh7U4bp.png" width="200">
+                <span class="d-block mt-3">Con il Servizio di Newsletter rimani aggiornato sui principali eventi in programma. <br> Iscriviti subito per non perdere i tuoi eventi preferiti!</span>
+
+                <div class="mx-5">
+
+
+                  <div class="input-group mb-3 mt-4 d-flex justify-content-between">
+                    <input type="text" class="form-control" placeholder="Inserisci email" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <input type ="submit" class="btn btn-success border-rad"  value="Iscriviti alla Newsletter">
+                 </div>
+                    
+
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+
+
+    <!-- ricerca per citta e categoria-->
+
+    <div class="row d-flex justify-content-center align-items-center rows">
+      <div class="col-md-6">
+          <div class="card">
+              <div class="text-center">
+                  <h2>Niente in programma?</h2>
+                  <span class="d-block mt-3">Stai cercando qualcosa da fare per i prossimi giorni? Basta un click per trovare tutti gli eventi in programma nelle vicinanze! <br> Iscriviti subito per non perdere i tuoi eventi preferiti!</span>
+                  <div class="mx-5">
+                      <form action="" method="get">
+                          <div class="form-row">
+                              <div class="col">
+                                  <label for="città">Scegli città</label>
+                                  <!-- useremo th:each per popolare le select ... -->
+                                <select name="città" class="selectpicker" data-width="100px">
+                                      <option disabled selected>Città:</option>
+                                      <option value="città1">Città 1</option>
+                                      <option value="città2">Città 2</option>
+                                      <option value="città1">Città 3</option>
+                                      <option value="città2">Città 4</option>
+                                      <option value="città2">sas</option>
+                                </select>
+                              
+                              </div>
+                              <div class="col">
+                                  <label for="categoria">Scegli categoria</label>
+                                  <select name="categoria" class="selectpicker">
+                                      <option disabled selected>Categorie:</option> 
+                                      <option value="categoria1">Categoria 1</option>
+                                      <option value="categoria2">Categoria 2</option>
+                                      <option value="categoria3">Categoria 3</option>
+                                      <option value="categoria3">Categoria 4</option>
+                                      <option value="categoria3">Categoria 5</option>
+                                  </select>
+               
+                              </div>
+                          </div>
+                          <br>
+                          <input type="submit" value="Cerca" class="btn btn-success border-rad">
+                      </form>  
+                    <!--   <form action="" method="get">
+                        <div class="row">
+                          <div class="col">
+                            <select name="città" class="selectpicker" data-width="auto">
+                              <option disabled selected>Città:</option>
+                              <option value="città1">Città 1</option>
+                              <option value="città2">Città 2</option>
+                              <option value="città1">Città 3</option>
+                              <option value="città2">Città 4</option>
+                              <option value="città2">Città 5555555555555555555555</option>
+                            </select>
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="Last name">
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="Last name">
+                          </div>
+                        </div>
+                      </form> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
  <!-- INIZIO FOOTER -->
 
  <div class="bottom">
