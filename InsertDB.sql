@@ -57,24 +57,6 @@ insert into citta (id_citta, nome_citta, provincia) values (17, 'Taranto', 'Tara
 insert into citta (id_citta, nome_citta, provincia) values (18, 'Reggio Calabria', 'Reggio Calabria');
 insert into citta (id_citta, nome_citta, provincia) values (19, 'Modena', 'Modena');
 insert into citta (id_citta, nome_citta, provincia) values (20, 'Livorno', 'Livorno');
---Inserimento Eventi Details 
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (3, '2026-01-19', 3, 2, 955);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (4, '2024-07-31', 16, 15, 831);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (5, '2023-09-01', 11, 11, 184);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (6, '2026-01-29', 10, 17, 992);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (7, '2027-05-12', 4, 8, 135);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (8, '2026-11-05', 8, 14, 226);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (9, '2024-03-22', 7, 8, 791);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (10, '2027-04-20', 11, 7, 578);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (11, '2025-08-25', 10, 14, 101);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (12, '2027-02-04', 13, 7, 307);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (14, '2026-06-15', 19, 2, 746);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (15, '2027-04-16', 16, 17, 925);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (16, '2027-03-23', 14, 19, 8);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (17, '2023-12-20', 14, 2, 867);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (18, '2026-10-22', 11, 6, 576);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (19, '2024-11-16', 3, 10, 109);
-insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (20, '2025-07-05', 11, 13, 641);
 --Inserimento Locations
 insert into locations (id_location, nome_location, tipologia_location, id_citta, indirizzo, capienza, indicazioni_stradali) values (2, 'Arena di Verona', 'stadio', 5, '3507 Westerfield Parkway', 392404, 'Networked');
 insert into locations (id_location, nome_location, tipologia_location, id_citta, indirizzo, capienza, indicazioni_stradali) values (3, 'Mediolanum Forum', 'palazzetto', 1, '0 Roxbury Crossing', 524481536, 'Fully-configurable');
@@ -95,6 +77,24 @@ insert into locations (id_location, nome_location, tipologia_location, id_citta,
 insert into locations (id_location, nome_location, tipologia_location, id_citta, indirizzo, capienza, indicazioni_stradali) values (18, 'PalaLottomatica', 'sala prove', 20, '38849 Havey Lane', 303109716, 'Object-based');
 insert into locations (id_location, nome_location, tipologia_location, id_citta, indirizzo, capienza, indicazioni_stradali) values (19, 'Palasport Olimpico', 'arena', 6, '5 Emmet Plaza', 813535090, 'Virtual');
 insert into locations (id_location, nome_location, tipologia_location, id_citta, indirizzo, capienza, indicazioni_stradali) values (20, 'PalaBancoDesio', 'stadio', 18, '539 Stang Circle', 278995329, 'core');
+--Inserimento Eventi Details 
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (3, '2026-01-19', 3, 2, 955);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (4, '2024-07-31', 16, 15, 831);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (5, '2023-09-01', 11, 11, 184);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (6, '2026-01-29', 10, 17, 992);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (7, '2027-05-12', 4, 8, 135);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (8, '2026-11-05', 8, 14, 226);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (9, '2024-03-22', 7, 8, 791);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (10, '2027-04-20', 11, 7, 578);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (11, '2025-08-25', 10, 14, 101);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (12, '2027-02-04', 13, 7, 307);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (14, '2026-06-15', 19, 2, 746);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (15, '2027-04-16', 16, 17, 925);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (16, '2027-03-23', 14, 19, 8);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (17, '2023-12-20', 14, 2, 867);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (18, '2026-10-22', 11, 6, 576);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (19, '2024-11-16', 3, 10, 109);
+insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (20, '2025-07-05', 11, 13, 641);
 --Prenotazione
 insert into prenotazione (id_prenotazione, id_utente, id_eventi_details) values (1, 3, 9);
 insert into prenotazione (id_prenotazione, id_utente, id_eventi_details) values (2, 15, 14);
