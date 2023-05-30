@@ -40,23 +40,23 @@ insert into artista (id_artista, nome_artista, inf_artista) values (19, 'Deedee 
 insert into artista (id_artista, nome_artista, inf_artista) values (20, 'Tammie Lattin', 'Info');
 --Inserimento città
 insert into citta (id_citta, nome_citta, provincia) values (3, 'Napoli', 'Napoli');
-insert into citta (id_citta, nome_citta, provincia) values (4, 'Firenze', 'Torino');
-insert into citta (id_citta, nome_citta, provincia) values (5, 'Torino', 'Firenze');
+insert into citta (id_citta, nome_citta, provincia) values (4, 'Firenze', 'Firenze');
+insert into citta (id_citta, nome_citta, provincia) values (5, 'Torino', 'Torino');
 insert into citta (id_citta, nome_citta, provincia) values (6, 'Bologna', 'Bologna');
-insert into citta (id_citta, nome_citta, provincia) values (7, 'Palermo', 'Genova');
-insert into citta (id_citta, nome_citta, provincia) values (8, 'Genova', 'Palermo');
-insert into citta (id_citta, nome_citta, provincia) values (9, 'Venezia', 'Bari');
-insert into citta (id_citta, nome_citta, provincia) values (10, 'Verona', 'Catania');
-insert into citta (id_citta, nome_citta, provincia) values (11, 'Bari', 'Venezia');
-insert into citta (id_citta, nome_citta, provincia) values (12, 'Catania', 'Verona');
+insert into citta (id_citta, nome_citta, provincia) values (7, 'Palermo', 'Palermo');
+insert into citta (id_citta, nome_citta, provincia) values (8, 'Genova', 'Genova');
+insert into citta (id_citta, nome_citta, provincia) values (9, 'Venezia', 'Venezia');
+insert into citta (id_citta, nome_citta, provincia) values (10, 'Verona', 'Verona');
+insert into citta (id_citta, nome_citta, provincia) values (11, 'Bari', 'Bari');
+insert into citta (id_citta, nome_citta, provincia) values (12, 'Catania', 'Catania');
 insert into citta (id_citta, nome_citta, provincia) values (13, 'Trieste', 'Trieste');
 insert into citta (id_citta, nome_citta, provincia) values (14, 'Cagliari', 'Cagliari');
-insert into citta (id_citta, nome_citta, provincia) values (15, 'Padova', 'Matera');
-insert into citta (id_citta, nome_citta, provincia) values (16, 'Brescia', 'Lecce');
-insert into citta (id_citta, nome_citta, provincia) values (17, 'Taranto', 'Pescara');
-insert into citta (id_citta, nome_citta, provincia) values (18, 'Reggio Calabria', 'Ravenna');
-insert into citta (id_citta, nome_citta, provincia) values (19, 'Modena', 'Siena');
-insert into citta (id_citta, nome_citta, provincia) values (20, 'Livorno', 'Como');
+insert into citta (id_citta, nome_citta, provincia) values (15, 'Padova', 'Padova');
+insert into citta (id_citta, nome_citta, provincia) values (16, 'Brescia', 'Brescia');
+insert into citta (id_citta, nome_citta, provincia) values (17, 'Taranto', 'Taranto');
+insert into citta (id_citta, nome_citta, provincia) values (18, 'Reggio Calabria', 'Reggio Calabria');
+insert into citta (id_citta, nome_citta, provincia) values (19, 'Modena', 'Modena');
+insert into citta (id_citta, nome_citta, provincia) values (20, 'Livorno', 'Livorno');
 --Inserimento Eventi Details 
 insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (3, '2026-01-19', 3, 2, 955);
 insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (4, '2024-07-31', 16, 15, 831);
