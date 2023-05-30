@@ -76,7 +76,7 @@ insert into locations (id_location, nome_location, tipologia_location, id_citta,
 insert into locations (id_location, nome_location, tipologia_location, id_citta, indirizzo, capienza, indicazioni_stradali) values (17, 'Unipol Arena', 'club', 3, '3469 Knutson Way', 417803693, 'methodical');
 insert into locations (id_location, nome_location, tipologia_location, id_citta, indirizzo, capienza, indicazioni_stradali) values (18, 'PalaLottomatica', 'sala prove', 20, '38849 Havey Lane', 303109716, 'Object-based');
 insert into locations (id_location, nome_location, tipologia_location, id_citta, indirizzo, capienza, indicazioni_stradali) values (19, 'Palasport Olimpico', 'arena', 6, '5 Emmet Plaza', 813535090, 'Virtual');
-insert into locations (id_location, nome_location, tipologia_location, id_citta, indirizzo, capienza, indicazioni_stradali) values (20, 'PalaBancoDesio', 'stadio', 18, '539 Stang Circle', 278995329, 'core');
+insert into locations (id_location, nome_location, tipologia_location, id_citta, indirizzo, capienza, indicazioni_stradali) values (20, 'PalaBancoDesio', 'stadio', 18, '539 Stang Circle', 278995329, 'core'); 
 --Inserimento Eventi Details 
 insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (3, '2026-01-19', 3, 2, 955);
 insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (4, '2024-07-31', 16, 15, 831);
