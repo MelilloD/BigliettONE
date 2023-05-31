@@ -166,7 +166,9 @@ display: block;
 
 <div class="carousel">
   <div th:each="evento : ${listaEventi}">
+    <a th:href="@{/paginaEvento?idEvento={idEvento}(idEvento=${evento.id})}">
       <img th:src="${evento.locandina}" th:alt="Slide" />
+    </a>
   </div>
 </div>
 
@@ -205,12 +207,12 @@ display: block;
         </tr>
       </thead>
       <tbody>
-      <tr th:each = "evento: ${listaEventi}">
-        <td th:text = "${evento.titolo}"></td>
-        <td th:text = "${evento.categoria}"></td>
-        <td th:text = "${evento.primaData}"></td>
-        <td th:text = "${evento.ultimaData}"></td>
-      </tr>
+        <tr th:each = "evento: ${listaEventi}">
+          <td><a th:text = "${evento.titolo}" th:href="@{/paginaEvento?idEvento={idEvento}(idEvento=${evento.id})}"></a></td>
+          <td><a th:text = "${evento.categoria}" th:href="@{/paginaEvento?idEvento={idEvento}(idEvento=${evento.id})}"></a></td>
+          <td><a th:text = "${evento.primaData}" th:href="@{/paginaEvento?idEvento={idEvento}(idEvento=${evento.id})}"></a></td>
+          <td><a th:text = "${evento.ultimaData}" th:href="@{/paginaEvento?idEvento={idEvento}(idEvento=${evento.id})}"></a></td>
+        </tr>
     </tbody>
     </table>
     
