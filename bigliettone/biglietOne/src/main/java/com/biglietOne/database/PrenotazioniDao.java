@@ -9,12 +9,12 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
-import com.biglietOne.models.Artista;
 import com.biglietOne.models.Entity;
+import com.biglietOne.models.Prenotazioni;
 
-public class ArtistaDao implements IDAO{
-	
-	@Autowired
+public class PrenotazioniDao implements IDAO {
+
+    @Autowired
 	Database db;
 	
 	@Autowired
@@ -37,15 +37,15 @@ public class ArtistaDao implements IDAO{
 			
 			while(rs.next()) {
 				
-				Map<String, String> mappaUser = new HashMap<String, String>();
+				Map<String, String> mappaPrenotzioni = new HashMap<String, String>();
 				
-				int id = rs.getInt("ID_ARTISTA");
+				int id = rs.getInt("ID_PRENOTAZIONE");
 				
-				mappaUser.put("Id", id+"");
-				mappaUser.put("NomeArtista", rs.getString("NOME_ARTISTA"));
-				mappaUser.put("InfArtista" , rs.getString("INF_ARTISTA"));
-				
-				map.put(id, context.getBean(Artista.class, mappaUser));
+				mappaPrenotzioni.put("IdPrenotazione", id+"");
+				mappaPrenotzioni.put("IdUtente", rs.getInt("ID_UTENTE")+"");
+				mappaPrenotzioni.put("IdEventiDetails", rs.getInt("ID_EVENTIDETAILS")+"");
+				mappaPrenotzioni.put("IdPrezzo", rs.getInt("ID_PREZZO")+"");
+                map.put(id, context.getBean(Prenotazioni.class, mappaPrenotzioni) );
 				
 			}
 			
@@ -64,7 +64,7 @@ public class ArtistaDao implements IDAO{
 		
 		return map;
 	}
-
+	
 	
 	public boolean executeUpdate(String query, String... params) {
 		PreparedStatement ps = null;
@@ -97,38 +97,36 @@ public class ArtistaDao implements IDAO{
 		}
 	}
 
-
-	@Override
-	public boolean create(Entity e) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
-	
-	public Map<Integer, Entity> read(int id) {
-		String query = "select * from artista where id_artista = ?";
-		return executeQuery(query, id+"");
-	}
-	
-	@Override
-	public Map<Integer, Entity> read() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public boolean create(Entity e) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'create'");
+    }
 
 
-	@Override
-	public boolean update(Entity e) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    public Map<Integer, Entity> readFromEventDetails(int id) {
+        String query = "select * from PRENOTAZIONI where ID_EVENTIDETAILS = ?";
+	    return executeQuery(query, id+"");
+    }
+
+    @Override
+    public boolean update(Entity e) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
+    }
+
+    @Override
+    public boolean delete(int id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+    }
 
 
-	@Override
-	public boolean delete(int id) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
+    @Override
+    public Map<Integer, Entity> read() {
+        String query = "select * from PRENOTAZIONI where ID_EVENTIDETAILS";
+	    return executeQuery(query);
+    }
+    
+    
 }
