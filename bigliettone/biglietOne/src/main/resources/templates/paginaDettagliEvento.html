@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .rectangle {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 400px; /* Altezza del rettangolo uguale all'altezza della foto */
+      }
+
+      .left-panel {
+        flex: 1;
+        background-color: #495057;
+        height: 400px; /* Altezza del pannello uguale all'altezza della foto */
+        text-align: center;
+        vertical-align: center;
+        color: rgb(250, 249, 249);
+      }
+
+      .center {
+        padding: 70px 0;
+      }
+      /* .left-panel {
+            margin-right: 10px;  Aggiungi margine destro per separare i pannelli 
+        }  */
+
+      /* .right-panel {
+            margin-left: 10px;  Aggiungi margine sinistro per separare i pannelli 
+        } */
+
+      .photo {
+        height: 400px;
+        width: auto;
+        position: relative;
+      }
+
+      .rectangle2 {
+        position: relative;
+        text-align: left;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        background-color: #a4acb4;
+      }
+
+      .rectangle3 {
+        position: relative;
+        width: 1500px;
+        display: flex;
+        flex-direction: column;
+        height: 90px; /* Imposta l'altezza di rectangle3 a 60px */
+        background-color: #dbe2e9;
+        border: solid;
+        border-color: rgb(194, 201, 208);
+        border-width: 1px;
+        align-items: left;
+        display: flex;
+        justify-content: center;
+      }
+
+      .infoEvento {
+        text-align: left;
+      }
+
+      .rettangolino {
+        width: 1000px;
+        height: 20px;
+        background-color: rgb(10, 0, 0);
+        border: 2px solid black;
+        margin-top: 10px;
+      }
+      .button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+      /* .destra {
+            float: right;
+        
+            width: 50%;
+        }
+        .sinistra{
+            float: left;
+        
+            width: 50%;
+        } */
+      .rectangle2 .left-content {
+        flex: 1;
+      }
+
+      .rectangle2 .right-content {
+        margin-right: auto;
+      }
+
+      .rectangle2 .right-content summary::-webkit-details-marker {
+        display: none;
+      }
+
+      /*   .rectangle2 .right-content summary::after {
+            content: "\25BC"; 
+            margin-left: 5px;
+        } */
+
+      .cont {
+        float: left;
+        padding: 0 15px 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rectangle">
+      <div class="left-panel">
+        <div class="center">
+          <h1>Titolo</h1>
+          <h2>Scopri i dettagli e acquista il tuo biglietto</h2>
+          <h2>le date</h2>
+          <h2>biglietti da ...</h2>
+          <br />
+          <button
+            style="
+              background-color: white;
+              color: blue;
+              height: 60px;
+              width: 170px;
+              font-size: large;
+            "
+          >
+            Acquista ora
+          </button>
+        </div>
+      </div>
+      <img class="photo" src="/img/alice.jpeg" alt="Foto" />
+      <div class="right-panel"></div>
+    </div>
+    <div
+      class="rectangle2"
+      style="
+        background-color: #a4acb4;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <div class="rectangle3" style="margin-top: 40px">
+        <table>
+          <tr>
+            <td style="padding-left: 50px">
+              <h3>
+                1. Per favore seleziona il numero di biglietti desiderati:
+              </h3>
+            </td>
+            <td style="padding-right: 50px; text-align: right">
+              <button class="button button1">-</button>
+              <span id="number">1</span>
+              <button class="button button2">+</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="rectangle3">
+        <h3 style="padding-left: 50px">
+          2. Per favore seleziona la categoria di posto:
+        </h3>
+      </div>
+      <div class="rectangle3">
+        <table>
+          <tr>
+            <td style="padding-left: 50px"><h3>GOLD:</h3></td>
+            <td style="padding-right: 50px; text-align: right">prezzo</td>
+          </tr>
+        </table>
+      </div>
+      <div class="rectangle3">
+        <table>
+          <tr>
+            <td style="padding-left: 50px"><h3>SILVER:</h3></td>
+            <td style="padding-right: 50px; text-align: right">prezzo</td>
+          </tr>
+        </table>
+      </div>
+      <div class="rectangle3">
+        <table>
+          <tr>
+            <td style="padding-left: 50px"><h3>BRONZE:</h3></td>
+            <td style="padding-right: 50px; text-align: right">prezzo</td>
+          </tr>
+        </table>
+      </div>
+      <div class="rectangle3">
+        <button
+          style="
+            background-color: white;
+            color: blue;
+            height: 60px;
+            width: 300px;
+            font-size: 22px;
+            align-items: center;
+          "
+        >
+          Quantita+prezzo
+        </button>
+      </div>
+    </div>
+    <div class="rectangle2" style="background-color: #dbe2e9">
+      <table>
+        <tr>
+          <section class="left-content">
+            <h2>Informazioni sull'acquisto on line</h2>
+            <summary>
+              <span></span>
+            </summary>
+          </section>
+        </tr>
+        <tr>
+          <section class="right-content">
+            <details>
+              <p>
+                Quisque lacinia molestie felis, vitae sodales neque viverra nec.
+                Proin eu metus quis magna varius sagittis eget id ante. Maecenas
+                vel lacus pretium, varius est quis, egestas velit. Vestibulum
+                eget lacinia mauris.
+              </p>
+            </details>
+          </section>
+        </tr>
+      </table>
+    </div>
+    <div class="rectangle2" style="background-color: #dbe2e9">
+      <table>
+        <tr>
+          <section class="left-content">
+            <h2>Informazioni sull'organizzatore</h2>
+            <summary>
+              <span></span>
+            </summary>
+          </section>
+        </tr>
+        <tr>
+          <section class="right-content">
+            <details>
+              <p>
+                Quisque lacinia molestie felis, vitae sodales neque viverra nec.
+                Proin eu metus quis magna varius sagittis eget id ante. Maecenas
+                vel lacus pretium, varius est quis, egestas velit. Vestibulum
+                eget lacinia mauris.
+              </p>
+            </details>
+          </section>
+        </tr>
+      </table>
+    </div>
+    <div class="rectangle2" style="background-color: #eef3f9; display: flex">
+      <div style="display: flex; align-items: center">
+        <h2 class="infoEvento" style="margin-right: 30px">Nome del locale</h2>
+        <div class="rettangolino"></div>
+      </div>
+      <p class="cont">
+        <img
+          class="cont"
+          src="/img/obihall.jpg"
+          style="height: 150px; width: auto; max-width: 100%"
+        />
+        Indirizzo
+        <br />
+        Indicazioni stradali
+      </p>
+    </div>
+
+    <script>
+      const decrementButton = document.querySelector(".button1");
+      const incrementButton = document.querySelector(".button2");
+      const numberElement = document.getElementById("number");
+
+      let number = 1;
+
+      function updateNumber() {
+        numberElement.textContent = number;
+      }
+
+      decrementButton.addEventListener("click", function () {
+        if (number > 1) number--;
+        updateNumber();
+      });
+
+      incrementButton.addEventListener("click", function () {
+        number++;
+        updateNumber();
+      });
+    </script>
+  </body>
+</html>
