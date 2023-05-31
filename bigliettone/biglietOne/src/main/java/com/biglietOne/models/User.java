@@ -13,9 +13,22 @@ public class User extends Entity {
 	private String password;
 	private String eventiPreferiti;
 	private String categoriePreferite;
-	private String cittaUser;
-	private String provinciaUser;
+	private Citta cittaUser;
 	
+	public void setIdCitta(int id) {
+		if(cittaUser == null) {
+			cittaUser = new Citta();
+		}
+		cittaUser.setId(id);
+	}
+
+	public int getIdCitta(){
+		if(cittaUser != null){
+			return cittaUser.getId();
+		}
+		return -1;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -64,24 +77,17 @@ public class User extends Entity {
 	public void setDataNascita(Date dataNascita) {
 		this.dataNascita = dataNascita;
 	}
-	public String getCittaUser() {
+	public Citta getCittaUser() {
 		return cittaUser;
 	}
-	public String getProvinciaUser() {
-		return provinciaUser;
-	}
-	public void setCittaUser(String cittaUser) {
+	public void setCittaUser(Citta cittaUser) {
 		this.cittaUser = cittaUser;
-	}
-	public void setProvinciaUser(String provinciaUser) {
-		this.provinciaUser = provinciaUser;
 	}
 	@Override
 	public String toString() {
 		return "User [nome=" + nome + ", cognome=" + cognome + ", dataNascita=" + dataNascita + ", email=" + email
 				+ ", username=" + username + ", password=" + password + ", eventiPreferiti=" + eventiPreferiti
-				+ ", categoriePreferite=" + categoriePreferite + ", cittaUser=" + cittaUser + ", provinciaUser="
-				+ provinciaUser + "]";
+				+ ", categoriePreferite=" + categoriePreferite + ", cittaUser=" + cittaUser + "]";
 	}
 	
 }
