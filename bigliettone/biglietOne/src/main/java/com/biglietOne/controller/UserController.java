@@ -1,5 +1,6 @@
 package com.biglietOne.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -64,8 +65,11 @@ public class UserController {
     }
 
 	@RequestMapping(path = "/registerPage", method = RequestMethod.GET)
-    public String registerPage(HttpSession session) {
+    public String registerPage(HttpSession session, Model model) {
         
+		List<Citta> listaCitta = cService.getCitta();
+		model.addAttribute("listaCitta", listaCitta);
+
         return "registerPage.html";
     }
 	
@@ -83,8 +87,7 @@ public class UserController {
 			session.setAttribute("cognome", c.getCognome());
 			session.setAttribute("data_nascita", c.getDataNascita());
 			session.setAttribute("email", c.getEmail());
-			session.setAttribute("citta_user", c.getCittaUser());
-			session.setAttribute("provincia_user", c.getProvinciaUser());
+			session.setAttribute("cittaUser", c.getCittaUser());
 			return "areaUtente.html";
 		} else {
 			session.setAttribute("errore", "Username o password errata");
@@ -110,7 +113,7 @@ public class UserController {
 		if(!params.isEmpty())
 		{
 			uService.addUser(params);
-			String username = params.get("Username");
+ 			String username = params.get("Username");
 			String password = params.get("Password");
 			session.setAttribute("username", username);
 			session.setAttribute("password", password);
@@ -119,8 +122,7 @@ public class UserController {
 			session.setAttribute("cognome", c.getCognome());
 			session.setAttribute("data_nascita", c.getDataNascita());
 			session.setAttribute("email", c.getEmail());
-			session.setAttribute("citta_user", c.getCittaUser());
-			session.setAttribute("provincia_user", c.getProvinciaUser());
+			session.setAttribute("cittaUser", c.getCittaUser());
 			return "areaUtente.html";
 		}
 		else
