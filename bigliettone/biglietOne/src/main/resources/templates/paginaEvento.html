@@ -59,56 +59,58 @@
       align-items: flex-start;
       background-color: #dbe2e9;
       justify-content: center;
-    height: 500px;
     }
 
     .rectangle4 {
-        position: relative;
-        width: 200px;
-        display: flex;
-        flex-direction: column;
-        background-color: #dbe2e9;
-        border: solid;
-        border-color: rgb(194, 201, 208);
-        border-width: 1px;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .rectangle5 {
-  position: relative;
-  width: 1100px;
-  display: flex;
-  flex-direction: row;
-  background-color: #dbe2e9;
-  border: solid;
-  border-color: rgb(194, 201, 208);
-  border-width: 1px;
-  align-items: center;
-  justify-content: space-between;
-  text-align: left;
-}
+      position: relative;
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      background-color: #dbe2e9;
+      border: solid;
+      border-color: rgb(194, 201, 208);
+      border-width: 1px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.rectangle5 p {
-  margin: 0;
-  padding: 0;
-}
+    .rectangle5 {
+      position: relative;
+      width: 1100px;
+      display: flex;
+      flex-direction: row;
+      background-color: #dbe2e9;
+      border: solid;
+      border-color: rgb(194, 201, 208);
+      border-width: 1px;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+    }
 
-.rectangle5 button {
-  background-color: white;
-  color: blue;
-  height: 40px;
-  width: 130px;
-  font-size: large;
-}
-.rectangle5 .right-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.infoEvento {
+    .rectangle5 p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .rectangle5 button {
+      background-color: white;
+      color: blue;
+      height: 40px;
+      width: 130px;
+      font-size: large;
+    }
+
+    .rectangle5 .right-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .infoEvento {
       text-align: left;
     }
 
@@ -119,20 +121,23 @@
       border: 2px solid black;
       margin-top: 10px;
     }
-.cont {
-        float: left;
-        padding: 0 15px 0 0;
-      }
-.sinistra{
-    align-items: left;
-}
-.destra{
-    align-items:right;
-}
 
     .cont {
       float: left;
- padding: 0 15px 0 0;
+      padding: 0 15px 0 0;
+    }
+
+    .sinistra {
+      align-items: left;
+    }
+
+    .destra {
+      align-items: right;
+    }
+
+    .cont {
+      float: left;
+      padding: 0 15px 0 0;
     }
   </style>
 
@@ -235,34 +240,32 @@
   </div>
 
   <div class="rectangle2" style="background-color: #a4acb4; align-items: center;">
-      <div class="d-flex flex-row justify-content-between">
-        <div class="rectangle4" style="display: flex; align-items: center;">
-          <p style="margin: 0; padding: 0;">Date</p>
-        </div>
-        <div class="rectangle5" style="padding: 20px;">
-          <p>Citta
-            <br>
-            Locale 
-          <br>
-            Nome dell'artista
-        </p>
+    <div class="d-flex flex-row justify-content-between" th:each="evento: ${listaEventi}">
+      <div class="rectangle4" style="display: flex; align-items: center;">
+        <h4 style="margin: 0; padding: 0;"><span th:text="${evento.primaData}"></span><br><span th:text="${evento.ultimaData}"></span></h4>
+      </div>
+      <div class="rectangle5" style="padding: 20px;">
+        <h3><span th:text="${evento.titolo}"></span><br>
+        <span th:text="${evento.categoria}"></span></h3>
         <div class="right-content">
-          <p>da prezzo min</p>
           <br>
-          <button>Biglietti</button>
-        </div>
+          <form action="/paginaEvento">
+            <button type="submit" >Apri</button>
+            <input type="hidden" name="idEvento" th:value= "${evento.id}">
+          </form>
         </div>
       </div>
     </div>
-      
-      </div>
+  </div>
+
+  </div>
   <div class="rectangle2" style="background-color: #dbe2e9;" display="flex">
     <div style="display: flex; align-items: center;">
       <h2 class="infoEvento" style="margin-right: 30px;">Biografia</h2>
       <div class="rettangolino"></div>
     </div>
     <p class="cont" style="padding-top: 30px;">
-     
+
       <img class="cont" th:src="${evento.artista.foto}" style="height: 200px;width:auto; max-width: 100%;">
       <span th:text="${evento.artista.nomeArtista}"></span>>
       <span th:text="${evento.artista.infArtista}"></span>>
@@ -271,7 +274,7 @@
 
     </p>
   </div>
-        
+
 
 
 
