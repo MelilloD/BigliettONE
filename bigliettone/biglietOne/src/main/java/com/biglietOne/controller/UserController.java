@@ -1,5 +1,6 @@
 package com.biglietOne.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -15,9 +16,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.biglietOne.models.Citta;
 import com.biglietOne.models.Entity;
 import com.biglietOne.models.Evento;
+import com.biglietOne.models.Prezzo;
 import com.biglietOne.models.User;
 import com.biglietOne.service.CittaService;
 import com.biglietOne.service.EventoService;
+import com.biglietOne.service.PrezzoService;
 import com.biglietOne.service.UserService;
 
 
@@ -33,6 +36,9 @@ public class UserController {
 
 	@Autowired
 	EventoService eService;
+
+	@Autowired
+	PrezzoService pService;
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/")
 	public String home(HttpSession session, Model model) {
@@ -64,8 +70,11 @@ public class UserController {
     }
 
 	@RequestMapping(path = "/registerPage", method = RequestMethod.GET)
-    public String registerPage(HttpSession session) {
+    public String registerPage(HttpSession session, Model model) {
         
+		List<Citta> listaCitta = cService.getCitta();
+		model.addAttribute("listaCitta", listaCitta);
+
         return "registerPage.html";
     }
 	
@@ -83,8 +92,7 @@ public class UserController {
 			session.setAttribute("cognome", c.getCognome());
 			session.setAttribute("data_nascita", c.getDataNascita());
 			session.setAttribute("email", c.getEmail());
-			session.setAttribute("citta_user", c.getCittaUser());
-			session.setAttribute("provincia_user", c.getProvinciaUser());
+			session.setAttribute("cittaUser", c.getCittaUser());
 			return "areaUtente.html";
 		} else {
 			session.setAttribute("errore", "Username o password errata");
@@ -110,7 +118,7 @@ public class UserController {
 		if(!params.isEmpty())
 		{
 			uService.addUser(params);
-			String username = params.get("Username");
+ 			String username = params.get("Username");
 			String password = params.get("Password");
 			session.setAttribute("username", username);
 			session.setAttribute("password", password);
@@ -119,14 +127,11 @@ public class UserController {
 			session.setAttribute("cognome", c.getCognome());
 			session.setAttribute("data_nascita", c.getDataNascita());
 			session.setAttribute("email", c.getEmail());
-			session.setAttribute("citta_user", c.getCittaUser());
-			session.setAttribute("provincia_user", c.getProvinciaUser());
+			session.setAttribute("cittaUser", c.getCittaUser());
 			return "areaUtente.html";
 		}
 		else
 			return "redirect:/";
 	}
-	
-	
 
 }
