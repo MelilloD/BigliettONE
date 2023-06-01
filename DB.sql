@@ -5,7 +5,8 @@ use db ;
  
 create table artista (id_artista int primary key auto_increment, 
 nome_artista varchar(45),
-inf_artista varchar(45)
+inf_artista varchar(45),
+foto varchar(45)
 );
 create table citta(
 	id_citta int primary key auto_increment,
