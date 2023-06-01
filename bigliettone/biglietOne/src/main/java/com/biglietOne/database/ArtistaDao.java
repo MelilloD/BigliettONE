@@ -44,6 +44,7 @@ public class ArtistaDao implements IDAO{
 				mappaUser.put("Id", id+"");
 				mappaUser.put("NomeArtista", rs.getString("NOME_ARTISTA"));
 				mappaUser.put("InfArtista" , rs.getString("INF_ARTISTA"));
+				mappaUser.put("Foto" , rs.getString("FOTO"));
 				
 				map.put(id, context.getBean(Artista.class, mappaUser));
 				

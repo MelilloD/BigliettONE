@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.biglietOne.models.Citta;
 import com.biglietOne.models.Entity;
 import com.biglietOne.models.Evento;
+import com.biglietOne.models.Prezzo;
 import com.biglietOne.models.User;
 import com.biglietOne.service.CittaService;
 import com.biglietOne.service.EventoService;
+import com.biglietOne.service.PrezzoService;
 import com.biglietOne.service.UserService;
 
 
@@ -34,6 +36,9 @@ public class UserController {
 
 	@Autowired
 	EventoService eService;
+
+	@Autowired
+	PrezzoService pService;
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/")
 	public String home(HttpSession session, Model model) {
@@ -128,7 +133,5 @@ public class UserController {
 		else
 			return "redirect:/";
 	}
-	
-	
 
 }

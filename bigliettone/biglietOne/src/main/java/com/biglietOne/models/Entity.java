@@ -54,6 +54,14 @@ public abstract class Entity {
 							m.invoke(this, Date.valueOf(valoreProp));
 							break;
 							
+						case "double":
+							m.invoke(this, Double.parseDouble(valoreProp));
+							break;
+
+						case "float":
+							m.invoke(this, Float.parseFloat(valoreProp));
+							break;
+
 						case "boolean"	:
 							//Per i boolean dobbiamo pensare a tutti i modi in cui
 							//potrebbero arrivare i valori boolean:

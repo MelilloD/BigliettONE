@@ -25,6 +25,10 @@ public class Evento extends Entity{
 		}
 		artista.setId(id);
 	}
+
+	public int getIdArtista(){
+		return artista.getId();
+	}
 	
 	public String getCategoria() {
 		return categoria;

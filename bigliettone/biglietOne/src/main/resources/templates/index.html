@@ -167,7 +167,7 @@ display: block;
 <div class="carousel">
   <div th:each="evento : ${listaEventi}">
     <a th:href="@{/paginaEvento?idEvento={idEvento}(idEvento=${evento.id})}">
-      <img th:src="${evento.locandina}" th:alt="Slide" />
+      <img th:src="${evento.locandina}" th:alt="Slide" style="height: 200px;width:auto; max-width: 100%;" />
     </a>
   </div>
 </div>

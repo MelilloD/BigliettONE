@@ -63,10 +63,9 @@ public class EventiController {
     public String evento( @RequestParam("idEvento") String idEvento , HttpSession session, Model model) {
 
         Evento e =  eService.getEvento(idEvento);
-
+     
         model.addAttribute("evento", e);
-
-
+      
         return "paginaEvento.html" ;
     
     }
