@@ -42,7 +42,7 @@ public class EventoDetailDao implements IDAO{
 				int id = rs.getInt("ID_EVENTI_DETAILS");
 				
 				mappaEventiDetail.put("Id", id+"");
-				mappaEventiDetail.put("Data", rs.getDate("DATA_EVENTO").toString());
+				mappaEventiDetail.put("DataEvento", rs.getDate("DATA_EVENTO").toString());
 				mappaEventiDetail.put("IdLocation", rs.getInt("ID_LOCATION")+"");
 				mappaEventiDetail.put("IdEventi", rs.getInt("ID_EVENTO")+"");
 				mappaEventiDetail.put("PostiLiberi", rs.getInt("POSTI_LIBERI")+"");

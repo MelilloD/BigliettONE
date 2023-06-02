@@ -258,6 +258,40 @@ public class EventoService {
 
 		}
 		e.setArtista(a);
+
+		Map<Integer, Entity> mapEventiDetail = eventoDetailDao.read(e.getId());
+				if(!mapEventiDetail.isEmpty()){
+					for(Entry<Integer, Entity> entryEventiDetail : mapEventiDetail.entrySet()) {
+						
+						EventoDetail eD = (EventoDetail) entryEventiDetail.getValue();
+						
+
+						Map<Integer, Entity> mapLocation = locationDao.read(eD.getIdLocation());
+						Location l = null;
+						if(!mapLocation.isEmpty()){
+							for(Entry<Integer, Entity> location : mapLocation.entrySet()){
+								l = (Location) location.getValue();
+								eD.setLocation(l);
+								break;
+							}
+
+							Map<Integer,Entity> mapCitta =  cittaDao.read(l.getIdCitta());
+							if(!mapCitta.isEmpty()){
+								for(Entry<Integer, Entity> citta : mapCitta.entrySet()){
+									Citta c = (Citta) citta.getValue();
+									l.setCitta(c);
+									break;
+								}
+
+							}
+
+						}
+						e.getListaEventoDetails().add(eD);
+
+						
+					}
+				}
+
 		return e;
 	}
 
