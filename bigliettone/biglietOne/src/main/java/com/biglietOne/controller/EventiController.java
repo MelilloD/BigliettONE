@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.biglietOne.models.Citta;
 import com.biglietOne.models.Evento;
-import com.biglietOne.models.EventoDetail;
 import com.biglietOne.service.CittaService;
-import com.biglietOne.service.EventoDetailsService;
 import com.biglietOne.service.EventoService;
 
 @Controller
@@ -25,9 +23,6 @@ public class EventiController {
 
     @Autowired
     EventoService eService;
-
-    @Autowired
-    EventoDetailsService eDService;
 
     @Autowired
     CittaService cService;
@@ -78,8 +73,6 @@ public class EventiController {
 
 		List<String> listaCategorie = eService.getCategorie();
 		model.addAttribute("listaCategorie", listaCategorie);
-
-
       
         return "paginaEvento.html" ;
     
@@ -87,16 +80,8 @@ public class EventiController {
 
 
     @RequestMapping(method = RequestMethod.GET, path = "/paginaDettagliEvento")
-        public String dettaglioEvento(HttpSession session, Model model, @RequestParam("idEvento") String idEvento, @RequestParam("idEventoDetail") String idEventoDetail) {
-
-            Evento e =  eService.getEvento(idEvento);
-            model.addAttribute("evento", e);
-
-            EventoDetail ed = eDService.getEventoDetail(idEventoDetail);
-            model.addAttribute("eventoDetail", ed);
+        public String dettaglioEvento(HttpSession session, Model model) {
     
-
-
             return "paginaDettagliEvento.html" ;
     }
     
