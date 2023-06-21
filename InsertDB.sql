@@ -1,4 +1,4 @@
--- Utenti
+--Utenti
 insert into utenti (id_utente, nome, cognome, data_nascita, email, username, pass, eventi_preferite, categorie_preferite) values (2, 'Alayne', 'O Mullen', '1965-06-29', 'aomullen1@ucla.edu', 'aomullen1', 'MtfPhqCJbo', 'Teatro', 'rock');
 insert into utenti (id_utente, nome, cognome, data_nascita, email, username, pass, eventi_preferite, categorie_preferite) values (3, 'Hattie', 'Klementz', '1958-02-27', 'hklementz2@vimeo.com', 'hklementz2', 'XpeuBcw', 'Cinema', 'hip hop');
 insert into utenti (id_utente, nome, cognome, data_nascita, email, username, pass, eventi_preferite, categorie_preferite) values (4, 'Bard', 'McAndie', '1988-04-30', 'bmcandie3@senate.gov', 'bmcandie3', 'XATjEXP7Pi6n', 'Concerto', 'jazz');
@@ -38,7 +38,7 @@ insert into artista (id_artista, nome_artista, inf_artista) values (17, 'Lanni L
 insert into artista (id_artista, nome_artista, inf_artista) values (18, 'Fred Sebborn', 'Info');
 insert into artista (id_artista, nome_artista, inf_artista) values (19, 'Deedee Balbeck', 'Info');
 insert into artista (id_artista, nome_artista, inf_artista) values (20, 'Tammie Lattin', 'Info');
--- Inserimento città
+--Inserimento città
 insert into citta (id_citta, nome_citta, provincia) values (3, 'Napoli', 'Napoli');
 insert into citta (id_citta, nome_citta, provincia) values (4, 'Firenze', 'Firenze');
 insert into citta (id_citta, nome_citta, provincia) values (5, 'Torino', 'Torino');
@@ -57,7 +57,7 @@ insert into citta (id_citta, nome_citta, provincia) values (17, 'Taranto', 'Tara
 insert into citta (id_citta, nome_citta, provincia) values (18, 'Reggio Calabria', 'Reggio Calabria');
 insert into citta (id_citta, nome_citta, provincia) values (19, 'Modena', 'Modena');
 insert into citta (id_citta, nome_citta, provincia) values (20, 'Livorno', 'Livorno');
--- Inserimento Locations
+--Inserimento Locations
 insert into locations (id_location, nome_location, tipologia_location, id_citta, indirizzo, capienza, indicazioni_stradali) values (2, 'Arena di Verona', 'stadio', 5, '3507 Westerfield Parkway', 392404, 'Networked');
 insert into locations (id_location, nome_location, tipologia_location, id_citta, indirizzo, capienza, indicazioni_stradali) values (3, 'Mediolanum Forum', 'palazzetto', 1, '0 Roxbury Crossing', 524481536, 'Fully-configurable');
 insert into locations (id_location, nome_location, tipologia_location, id_citta, indirizzo, capienza, indicazioni_stradali) values (4, 'Pala Alpitour', 'teatro', 11, '32520 Briar Crest Circle', 426087831, 'Adaptive');
@@ -95,7 +95,7 @@ insert into eventi_details (id_eventi_details, data_evento, id_location, id_even
 insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (18, '2026-10-22', 11, 6, 576);
 insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (19, '2024-11-16', 3, 10, 109);
 insert into eventi_details (id_eventi_details, data_evento, id_location, id_evento, posti_liberi) values (20, '2025-07-05', 11, 13, 641);
--- Prenotazione
+--Prenotazione
 insert into prenotazione (id_prenotazione, id_utente, id_eventi_details) values (1, 3, 9);
 insert into prenotazione (id_prenotazione, id_utente, id_eventi_details) values (2, 15, 14);
 insert into prenotazione (id_prenotazione, id_utente, id_eventi_details) values (3, 18, 16);
@@ -116,7 +116,7 @@ insert into prenotazione (id_prenotazione, id_utente, id_eventi_details) values 
 insert into prenotazione (id_prenotazione, id_utente, id_eventi_details) values (18, 9, 12);
 insert into prenotazione (id_prenotazione, id_utente, id_eventi_details) values (19, 18, 11);
 insert into prenotazione (id_prenotazione, id_utente, id_eventi_details) values (20, 12, 4);
--- prezzi
+--prezzi
 insert into prezzi (id_prezzi, id_eventi_details, prezzo) values (1, 2, 68.86);
 insert into prezzi (id_prezzi, id_eventi_details, prezzo) values (2, 19, 88.87);
 insert into prezzi (id_prezzi, id_eventi_details, prezzo) values (3, 19, 102.41);
