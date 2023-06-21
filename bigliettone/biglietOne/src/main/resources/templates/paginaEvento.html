@@ -239,37 +239,19 @@
     <div class="right-panel"></div>
   </div>
 
-<!--   <div class="rectangle2" style="background-color: #a4acb4; align-items: center;">
-    <div class="d-flex flex-row justify-content-between" th:each="eventoDetail: ${evento.listaEventoDetails}">
-      <div class="rectangle4" style="display: flex; align-items: center;">
-        <h4 style="margin: 0; padding: 0;" th:text="${eventoDetail.dataEvento}"></h4>
-      </div>
-      <div class="rectangle5" style="padding: 20px;">
-        <div class="right-content">
-          <br>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
   <div class="rectangle2" style="background-color: #a4acb4; align-items: center;">
-    <div class="d-flex flex-row justify-content-between" th:each="eventoDetail: ${evento.listaEventoDetails}">
+    <div class="d-flex flex-row justify-content-between" th:each="evento: ${listaEventi}">
       <div class="rectangle4" style="display: flex; align-items: center;">
-        <h4 style="margin: 0; padding: 0;"><span th:text="${eventoDetail.dataEvento}"></span></h4>
+        <h4 style="margin: 0; padding: 0;"><span th:text="${evento.primaData}"></span><br><span th:text="${evento.ultimaData}"></span></h4>
       </div>
       <div class="rectangle5" style="padding: 20px;">
-        <p>
-        <span th:text="${evento.titolo}"></span><br>
-        <span th:text="${evento.categoria}"></span><br>
-        <span th:text="${eventoDetail.location.citta.nomeCitta}"></span><br>
-        <span th:text="${eventoDetail.location.nomeLocation}"></span>
-      </p>
+        <h3><span th:text="${evento.titolo}"></span><br>
+        <span th:text="${evento.categoria}"></span></h3>
         <div class="right-content">
           <br>
-          <form action="/paginaDettagliEvento">
+          <form action="/paginaEvento">
             <button type="submit" >Apri</button>
             <input type="hidden" name="idEvento" th:value= "${evento.id}">
-            <input type="hidden" name="idEventoDetail" th:value= "${eventoDetail.id}">
           </form>
         </div>
       </div>
