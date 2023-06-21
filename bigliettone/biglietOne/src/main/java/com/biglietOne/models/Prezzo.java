@@ -7,19 +7,15 @@ public class Prezzo extends Entity{
 	
 	public void setIdEventoDetail(int id) {
 		
-		if(eventoDetail == null) 
-		{
+		if(eventoDetail == null) {
 			eventoDetail = new EventoDetail();
 		}
 		eventoDetail.setId(id);
 		
 	}
 	
-	public int getIdEventoDetail(){
-		if(eventoDetail != null){
-			return eventoDetail.getId();
-		}
-		return -1;
+	public int getIdEventoDetail() {
+		return eventoDetail.getId();
 	}
 	
 	public EventoDetail getEventoDetail() {

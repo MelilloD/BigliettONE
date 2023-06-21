@@ -44,26 +44,4 @@ public class CittaService {
         return listaCitta;
     }
     
-    public Citta getCittaFromId(int id){
-        Citta cit = new Citta();
-
-        Map<Integer, Entity> mapCitta = cDao.read(id);
-
-        for(Entry<Integer, Entity> citta : mapCitta.entrySet()){
-            Citta c = (Citta) citta.getValue();
-
-            Map<Integer, Entity> mapLocation = lDao.readFromIdCitta(c.getId());
-
-            for(Entry<Integer, Entity> location : mapLocation.entrySet()){
-                Location l = (Location) location.getValue();
-                c.getListaLocation().add(l);
-            }
-
-            cit = c;
-
-        }
-        
-
-        return cit;
-    }
 }

@@ -47,25 +47,4 @@ public class EventoDetailsService {
 
     }
 
-    public List<EventoDetail> getEventiDetails() {
-
-        List<EventoDetail> listaEventiDetails = new ArrayList<EventoDetail>();
-
-        Map<Integer, Entity> mapEventiDetails = eDetailDao.read();
-
-        if (!mapEventiDetails.isEmpty()) {
-
-            for (Entry<Integer, Entity> entryEventiDetail : mapEventiDetails.entrySet()) {
-
-                EventoDetail e = (EventoDetail) entryEventiDetail.getValue();
-
-                listaEventiDetails.add(e);
-            }
-
-        }
-
-        return listaEventiDetails;
-
-    }
-
 }

@@ -23,9 +23,7 @@ import com.biglietOne.models.Location;
 import com.biglietOne.models.Prezzo;
 import com.biglietOne.models.User;
 import com.biglietOne.service.CittaService;
-import com.biglietOne.service.EventoDetailsService;
 import com.biglietOne.service.EventoService;
-import com.biglietOne.service.PrezzoService;
 import com.biglietOne.service.UserService;
 
 @Configuration
@@ -91,16 +89,6 @@ public class Context {
 	}
 
 	@Bean
-	public EventoDetailsService getEventoDetailsService() {
-		return new EventoDetailsService();
-	}
-
-	@Bean
-	public PrezzoService getPrezzoService() {
-		return new PrezzoService();
-	}
-
-	@Bean
 	public CittaService getCittaService() {
 		return new CittaService();
 	}
@@ -127,7 +115,9 @@ public class Context {
 	public Artista newArtista(Map<String, String> param) {
 		return (Artista) new Artista().fromMap(param);
 	}
-
+	
+	
+	
 	@Bean
 	@Scope("prototype")
 	public EventoDetail newEventoDetail(Map<String, String> param) {

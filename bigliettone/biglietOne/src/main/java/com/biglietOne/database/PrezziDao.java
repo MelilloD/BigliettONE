@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
 import com.biglietOne.models.Entity;
-import com.biglietOne.models.Prezzo;
 
 public class PrezziDao implements IDAO {
 
@@ -39,14 +38,12 @@ public class PrezziDao implements IDAO {
 				
 				Map<String, String> mappaPrezzi = new HashMap<String, String>();
 				
-				int id = rs.getInt("id_prezzi");
+				int id = rs.getInt("ID_EVENTI");
 				
 				mappaPrezzi.put("Id", id+"");
-				mappaPrezzi.put("IdEventoDetail", rs.getString("ID_EVENTI_DETAILS")+"");
-				mappaPrezzi.put("Prezzo", rs.getString("PREZZO")+"");
+				mappaPrezzi.put("IdEventoDetail", rs.getString("ID_EVENTI_DETAILS"));
+				mappaPrezzi.put("Prezzo", rs.getString("PREZZO"));
 				
-				map.put(id, context.getBean(Prezzo.class, mappaPrezzi));
-
 			}
 			
 		} catch (SQLException e) {
@@ -101,15 +98,15 @@ public class PrezziDao implements IDAO {
 	    return executeQuery(query, id+"");
 	}
 	@Override
-	public Map<Integer, Entity> read() {
-	    String query = "select * from PREZZI";
-	    return executeQuery(query);
-	}
-
-	@Override
 	public boolean create(Entity e) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public Map<Integer, Entity> read() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override

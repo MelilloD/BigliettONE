@@ -240,7 +240,6 @@ public class EventoService {
 	}
 
 	public Evento getEvento(String idEvento){
-		
 		Evento e = null;
 		
 		Map<Integer, Entity> mapEventi = eventiDao.read(Integer.parseInt(idEvento));
@@ -249,15 +248,7 @@ public class EventoService {
 			e = (Evento) entryEventi.getValue();
 
 		}
-		
-		Artista a = null;
-		Map<Integer, Entity> mapArtisti = artistaDao.read(e.getIdArtista());
-		for(Entry<Integer, Entity> entryArtisti : mapArtisti.entrySet()) {
-			
-			a = (Artista) entryArtisti.getValue();
 
-		}
-		e.setArtista(a);
 		return e;
 	}
 

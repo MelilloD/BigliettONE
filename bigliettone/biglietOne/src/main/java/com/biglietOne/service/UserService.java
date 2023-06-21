@@ -9,9 +9,7 @@ import java.util.Map.Entry;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.biglietOne.Context;
-import com.biglietOne.database.CittaDao;
 import com.biglietOne.database.UserDao;
-import com.biglietOne.models.Citta;
 import com.biglietOne.models.Entity;
 import com.biglietOne.models.User;
 
@@ -21,12 +19,6 @@ public class UserService {
 	
 	@Autowired
 	private UserDao uDao;
-
-	@Autowired
-	private CittaDao cDao;
-
-	@Autowired
-	private CittaService cService;
 	
 	public User checkUser(String username, String password) {
 		User u = null;
@@ -36,7 +28,6 @@ public class UserService {
 		if(!map.isEmpty()) {
 			for(Entry e : map.entrySet() ) {
 				u = (User) e.getValue();
-				u.setCittaUser(cService.getCittaFromId(u.getIdCitta()));
 				break;
 			}
 		}
@@ -50,12 +41,12 @@ public class UserService {
 		u.setNome(params.get("Nome"));
 		u.setCognome(params.get("Cognome"));
 		u.setDataNascita(Date.valueOf(params.get("DataNascita")));
+		u.setCittaUser(params.get("CittaUser"));
+		u.setProvinciaUser(params.get("ProvinciaUser"));
 		u.setEmail(params.get("Email"));
 		u.setUsername(params.get("Username"));
 		u.setPassword(params.get("Password"));
 
-		Citta cit =  cService.getCittaFromId(Integer.parseInt(params.get("IdCitta")));		
-		u.setCittaUser(cit);
 		uDao.create(u);
 	}
 

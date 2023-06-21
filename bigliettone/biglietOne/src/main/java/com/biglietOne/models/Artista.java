@@ -4,7 +4,6 @@ public class Artista extends Entity{
 
 	private String nomeArtista;
 	private String infArtista;
-	private String foto;
 	
 	public String getNomeArtista() {
 		return nomeArtista;
@@ -17,12 +16,6 @@ public class Artista extends Entity{
 	}
 	public void setInfArtista(String infArtista) {
 		this.infArtista = infArtista;
-	}
-	public String getFoto() {
-		return foto;
-	}
-	public void setFoto(String foto) {
-		this.foto = foto;
 	}
 	
 	
