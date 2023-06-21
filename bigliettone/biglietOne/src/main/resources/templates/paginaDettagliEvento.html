@@ -51,7 +51,7 @@
 
       .rectangle3 {
         position: relative;
-        width: 1500px;
+        width: 80%;
         display: flex;
         flex-direction: column;
         height: 90px; /* Imposta l'altezza di rectangle3 a 60px */
@@ -116,10 +116,11 @@
     <div class="rectangle">
       <div class="left-panel">
         <div class="center">
-          <h1>Titolo</h1>
-          <h2>Scopri i dettagli e acquista il tuo biglietto</h2>
-          <h2>le date</h2>
-          <h2>biglietti da ...</h2>
+          <h1>Evento: <span th:text="${evento.titolo}"></span></h1>
+          <h4>Location: <span th:text="${eventoDetail.location.nomeLocation}"></span></h4>
+          <h4>Scopri i dettagli e acquista il tuo biglietto</h4>
+          <h4>Data evento: <span th:text="${eventoDetail.dataEvento}"></span></h4>
+          <h3>Biglietti da 20€</h3>
           <br />
           <button
             style="
