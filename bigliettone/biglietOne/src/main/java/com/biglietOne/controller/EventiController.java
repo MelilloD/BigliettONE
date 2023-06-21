@@ -60,19 +60,11 @@ public class EventiController {
 	}
 
     @RequestMapping(method = RequestMethod.GET, path = "/paginaEvento")
-    public String evento(HttpSession session, Model model, @RequestParam("idEvento") String idEvento) {
+    public String evento( @RequestParam("idEvento") String idEvento , HttpSession session, Model model) {
 
         Evento e =  eService.getEvento(idEvento);
+     
         model.addAttribute("evento", e);
-
-        List<Evento> listaEventi = eService.getEventi();
-        model.addAttribute("listaEventi", listaEventi);
-
-		List<Citta> listaCitta = cService.getCitta();
-        model.addAttribute("listaCitta", listaCitta);
-
-		List<String> listaCategorie = eService.getCategorie();
-		model.addAttribute("listaCategorie", listaCategorie);
       
         return "paginaEvento.html" ;
     
